@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome and google fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Graduate&family=Train+One&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/c1bedcdbe6.js" crossorigin="anonymous"></script>
+
+    <!-- css link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>The Good, the Badge and the Ugly</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <h1 class="header">The Good, the Badge and the Ugly</h1>
+    <h2 id="subheader">Can you match the crap badge to the club?</h2>
+
+    <!-- Game space & background -->
+    <div class="game-space">
+
+        <div id="signup-space">
+             <h2>Create a username to begin!</h2>
+            <i class="fa-solid fa-user"></i>
+            <input id="username-input" type="text" required>
+            <br class="break">
+            <input type="submit" id="begin" value="Begin!"></button>
+        </div>
+
+         <br class="break">
+
+        <!-- Badge space for questions -->
+        <div id="badge-space">
+            <!-- Progress bar 1/5 -->
+            <progress class="progress" max="100" value="10"></progress>
+        </div>
+
+        <!-- Answer space for answer buttons -->
+        <div id="answer-space">
+            <!-- answer options values a to c -->
+            <input id="answer1" type="submit" value="A">
+            <input id="answer2" type="submit" value="B">
+            <input id="answer3" type="submit" value="C">
+            <!-- reset button to break game early or reset -->
+            <button type="reset" id="reset">Start Over</button>
+        </div>
+    </div>
+    <!-- Javascript link -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
