@@ -1,0 +1,95 @@
+/* main global styles */
+
+body {
+    background-image: url(/assets/images/background/pexels-tomfisk-3448250.webp);
+    font-family: "Train One", sans-serif;
+    color:white;
+    text-align: center;
+}
+    
+/* header and sub-header */
+    
+.header {
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+}
+    
+#subheader {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+    
+/* game space */
+    
+.game-space {
+    background-color: rgba(172, 230, 185, 0.7);
+    box-sizing: border-box;
+    width: 85%;
+    height: 65vh;
+    max-height: 470px;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    border: 5px solid white;
+}
+    
+#signup-space {
+    font-family: "Graduate", sans-serif;
+    margin: auto;
+}
+    
+button {
+    font-family: "Graduate", sans-serif;
+    background-color: #04AA6D;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+    
+.break {
+    padding: 10px;
+}
+    
+.progress {
+    background-color: #04AA6D;
+    padding: 2px;
+}
+    
+#badge-space {
+    border: 5px solid black;
+    background-color: black;
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+    display: none;
+}
+    
+#answer-space {
+    display:none;
+}
+    
+input {
+    font-family: "Graduate", sans-serif;
+    background-color: #04AA6D;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+    
+/* media queries for general responsivity */
+    
+/* desktop size */
+    
+@media screen and (min-width: 992px) {
+    body {
+        padding: 150px;
+        }
+}
+    
