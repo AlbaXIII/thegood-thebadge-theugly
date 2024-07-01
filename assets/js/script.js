@@ -1,3 +1,16 @@
+//initialize quiz variables
+document.addEventListener('DOMContentLoaded', () => {
+    nextButton.classList.add('hide'); // Initially hide the 'Next' button
+  });
+  
+const startButton = document.getElementById('begin');
+const nextButton = document.getElementById('next-btn');
+const questionContainerElement = document.getElementById('answer-space');
+const questionElement = document.getElementById('badge-space');
+const answerButtonsElement = document.getElementById('answer-input');
+  
+let shuffledQuestions, currentQuestionIndex;
+
 // script to create and store local username
 let userName = document.getElementById('username-input').value;
 let sigupButton = document.getElementById('signup');
@@ -130,7 +143,7 @@ watfordQuestion.src = 'assets/images/badges/watford-question.webp';
 let watfordAnswer = new Image();
 watfordAnswer.src = 'assets/images/badges/watford-answer.webp';
 
-
+//push images to array for questions to be called
 var badges = [];
 badges.push(alloaQuestion, alloaAnswer, araguainaQuestion, araguainaAnswer, beneventoQuestion, beneventoAnswer,
     burtonQuestion, burtonAnswer, caravelQuestion, caravelAnswer, changchunQuestion, changchunAnswer,
@@ -143,8 +156,23 @@ badges.push(alloaQuestion, alloaAnswer, araguainaQuestion, araguainaAnswer, bene
     watfordQuestion, warriorsAnswer
 );
 
+//test function to show images successfully displaying in div
 function showBadge() {
     const random = Math.floor(Math.random() * badges.length);
     document.getElementById('badge-space').appendChild(badges[random]);
 }
 
+//questions 
+const myQuestions = [
+    {
+      question: alloaQuestion,
+      answers: {
+        a: "Douglas Crockford",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+      },
+      correctAnswer: "c",
+      correctImage: alloaAnswer
+    }]
+
+function buildQuiz(){}
