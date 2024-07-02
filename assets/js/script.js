@@ -1,16 +1,7 @@
 //initialize quiz variables
 document.addEventListener('DOMContentLoaded', () => {
-    nextButton.classList.add('hide'); // Initially hide the 'Next' button
   });
   
-const startButton = document.getElementById('begin');
-const nextButton = document.getElementById('next-btn');
-const questionContainerElement = document.getElementById('answer-space');
-const questionElement = document.getElementById('badge-space');
-const answerButtonsElement = document.getElementById('answer-input');
-  
-let shuffledQuestions, currentQuestionIndex;
-
 // script to create and store local username
 let userName = document.getElementById('username-input').value;
 let sigupButton = document.getElementById('signup');
@@ -24,11 +15,6 @@ signup.addEventListener('click', function (event) {
 });
 
 // reveal game space
-begin.addEventListener('click', function (event) {
-    event.preventDefault();
-    startGame();
-});
-
 function startGame() {
     let gameStart = "starting game...";
     console.log(gameStart);
@@ -36,6 +22,11 @@ function startGame() {
     document.getElementById('badge-space').style.display = 'inline-block';
     document.getElementById('answer-space').style.display = 'inline-block';
 }
+
+begin.addEventListener('click', function (event) {
+    event.preventDefault();
+    startGame();
+});
 
 // declare badge variables
 let alloaQuestion = new Image();
@@ -156,23 +147,207 @@ badges.push(alloaQuestion, alloaAnswer, araguainaQuestion, araguainaAnswer, bene
     watfordQuestion, warriorsAnswer
 );
 
-//test function to show images successfully displaying in div
-function showBadge() {
-    const random = Math.floor(Math.random() * badges.length);
-    document.getElementById('badge-space').appendChild(badges[random]);
-}
-
 //questions 
-const myQuestions = [
+var myQuestions = [
     {
-      question: alloaQuestion,
-      answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
-      },
-      correctAnswer: "c",
-      correctImage: alloaAnswer
-    }]
+        question: alloaQuestion,
+        optionA: "Alloa Athletic",
+        optionB: "Beecraig Town",
+        optionC: "Hench Hornets FC",
+        correctOption: "optionA",
+        correctImage: alloaAnswer
+    },
+    {
+        question: araguainaQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: araguainaAnswer
+    },
+    {
+        question: beneventoQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: beneventoAnswer
+    },
+    {
+        question: burtonQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: burtonAnswer
+    },
+    {
+        question: caravelQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: caravelAnswer
+    },
+    {
+        question: changchunQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: changchunAnswer
+    },
+    {
+        question: espoliQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: espoliAnswer
+    },
+    {
+        question: faetanoQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: faetanoAnswer
+    },
+    {
+        question: falubazQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: falubazAnswer
+    },
+    {
+        question: feniQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: feniAnswer
+    },
+    {
+        question: hashtagQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: hashtagAnswer
+    },
+    {
+        question: kugsakQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: kugsakAnswer
+    },
+    {
+        question: likhopoQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: likhopoAnswer
+    },
+    {
+        question: limonQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: limonAnswer
+    },
+    {
+        question: lincolnQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: lincolnAnswer
+    },
+    {
+        question: nobQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: nobAnswer
+    },
+    {
+        question: pavlikeniQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: pavlikeniAnswer
+    },
+    {
+        question: santaQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: santaAnswer
+    },
+    {
+        question: santosQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: santosAnswer
+    },
+    {
+        question: sheikhQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: sheikhAnswer
+    },
+    {
+        question: sousaQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: sousaAnswer
+    },
+    {
+        question: totQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: totAnswer
+    },
+    {
+        question: viharQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: viharAnswer
+    },
+    {
+        question: warriorsQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: warriorsAnswer
+    },
+    {
+        question: watfordQuestion,
+        optionA: "",
+        optionB: "",
+        optionC: "",
+        correctOption: "",
+        correctImage: warriorsAnswer
+    }
+]
 
-function buildQuiz(){}

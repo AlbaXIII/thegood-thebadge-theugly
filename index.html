@@ -39,18 +39,23 @@
         <!-- Badge space for questions -->
         <div id="badge-space">
             <!-- Progress bar 1/5 -->
-            <progress class="progress" max="100" value="20"></progress>
+            <h3>Score : <span id="player-score"></span> / 10</h3>
+            <h3> Question : <span id="question-number"></span> / 10</h3>
+            <progress class="progress" max="100" value="10"></progress>
         </div>
 
         <!-- Answer space for answer buttons -->
         <div id="answer-space">
             <!-- answer options values a to c -->
             <div id="answer-input">
-                <input id="answer1" type="submit" value="A" onclick="showBadge()">
-                <input id="answer2" type="submit" value="B">
-                <input id="answer3" type="submit" value="C">
+                <input id="answer1" class="answer" type="radio" onclick="showBadge()">
+                <input id="answer2" class="answer" type="radio">
+                <input id="answer3" class="answer" type="radio">
             </div> 
             <!-- reset button to break game early or reset -->
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
             <button type="reset" id="reset">Start Over</button>
         </div>
     </div>
