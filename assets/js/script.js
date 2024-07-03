@@ -28,126 +28,7 @@ begin.addEventListener('click', function (event) {
     startGame();
 });
 
-// declare badge variables
-let alloaQuestion = new Image();
-alloaQuestion.src = 'assets/images/badges/alloa-question.webp';
-let alloaAnswer = new Image();
-alloaAnswer.src = 'assets/images/badges/alloa-answer.webp';
-let araguainaQuestion = new Image();
-araguainaQuestion.src = 'assets/images/badges/araguaina-question.webp';
-let araguainaAnswer = new Image();
-araguainaAnswer.src = 'assets/images/badges/araguaina-answer.webp';
-let beneventoQuestion = new Image();
-beneventoQuestion.src = 'assets/images/badges/benevento-question.webp';
-let beneventoAnswer = new Image ();
-beneventoAnswer.src = 'assets/images/badges/benevento-answer.webp';
-let burtonQuestion = new Image();
-burtonQuestion.src = 'assets/images/badges/burton-athletic.webp';
-let burtonAnswer = new Image();
-burtonAnswer.src = 'assets/images/badges/burton-athletic.webp';
-let caravelQuestion = new Image();
-caravelQuestion.src = 'assets/images/badges/caravel-question.webp';
-let caravelAnswer = new Image();
-caravelAnswer.src = 'assets/images/badges/caravel-answer.webp';
-let changchunQuestion = new Image();
-changchunQuestion.src = 'assets/images/badges/changchun-yatai-question.webp';
-let changchunAnswer = new Image();
-changchunAnswer.src = 'assets/images/badges/changchun-yatai-question.webp';
-let espoliQuestion = new Image();
-espoliQuestion.src = 'assets/images/badges/espoli-question.webp';
-let espoliAnswer = new Image();
-espoliAnswer.src = 'assets/images/badges/espoli-answer.webp';
-let faetanoQuestion = new Image();
-faetanoQuestion.src = 'assets/images/badges/faetano-question.webp';
-let faetanoAnswer = new Image();
-faetanoAnswer.src = 'assets/images/badges/faetano-answer.webp';
-let falubazQuestion = new Image();
-falubazQuestion.src = 'assets/images/badges/falubaz.webp';
-let falubazAnswer = new Image();
-falubazAnswer.src = 'assets/images/badges/falubaz.webp';
-let feniQuestion = new Image();
-feniQuestion.src = 'assets/images/badges/feni-question.webp';
-let feniAnswer = new Image();
-feniAnswer.src = 'assets/images/badges/faetano-answer.webp';
-let hashtagQuestion = new Image();
-hashtagQuestion.src = 'assets/images/badges/hashtag-question.webp';
-let hashtagAnswer = new Image();
-hashtagAnswer.src = 'assets/images/badges/hashtag-answer.webp';
-let kugsakQuestion = new Image();
-kugsakQuestion.src = 'assets/images/badges/kugsak-question.webp';
-let kugsakAnswer = new Image();
-kugsakAnswer.src = 'assets/images/badges/kugsak-answer.webp';
-let likhopoQuestion = new Image();
-likhopoQuestion.src = 'assets/images/badges/likhopo-question.webp';
-let likhopoAnswer = new Image();
-likhopoAnswer.src = 'assets/images/badges/likhopo-answer.webp';
-let limonQuestion = new Image();
-limonQuestion.src = 'assets/images/badges/limon-question.webp';
-let limonAnswer = new Image();
-limonAnswer.src = 'assets/images/badges/limon-answer.webp';
-let lincolnQuestion = new Image();
-lincolnQuestion.src = 'assets/images/badges/lincoln-red-imps-question.webp';
-let lincolnAnswer = new Image();
-lincolnAnswer.src = 'assets/images/badges/lincoln-red-imps-answer.webp';
-let missileQuestion = new Image();
-missileQuestion.src = 'assets/images/badges/missile-question.webp';
-let missileAnswer = new Image();
-missileAnswer.src = 'assets/images/badges/missile-answer.webp';
-let nobQuestion = new Image();
-nobQuestion.src = 'assets/images/badges/newells-old-boys.webp';
-let nobAnswer = new Image();
-nobAnswer.src = 'assets/images/badges/newells-old-boys.webp';
-let pavlikeniQuestion = new Image();
-pavlikeniQuestion.src = 'assets/images/badges/pavlikeni.webp';
-let pavlikeniAnswer = new Image();
-pavlikeniAnswer.src = 'assets/images/badges/pavlikeni.webp';
-let santaQuestion = new Image();
-santaQuestion.src = 'assets/images/badges/santa-claus-question.webp';
-let santaAnswer = new Image();
-santaAnswer.src = 'assets/images/badges/santa-claus-answer.webp';
-let santosQuestion = new Image();
-santosQuestion.src = 'assets/images/badges/santos-rsa-question.webp';
-let santosAnswer = new Image();
-santosAnswer.src = 'assets/images/badges/santos-rsa-answer.webp';
-let sheikhQuestion = new Image();
-sheikhQuestion.src = 'assets/images/badges/sheikh-russel.webp';
-let sheikhAnswer = new Image();
-sheikhAnswer.src = 'assets/images/badges/sheikh-russel.webp';
-let sousaQuestion = new Image();
-sousaQuestion.src = 'assets/images/badges/sousa-question.webp';
-let sousaAnswer = new Image();
-sousaAnswer.src = 'assets/images/badges/sousa-answer.webp';
-let totQuestion = new Image();
-totQuestion.src = 'assets/images/badges/tot-question.webp';
-let totAnswer = new Image();
-totAnswer.src = 'assets/images/badges/tot-answer.webp';
-let viharQuestion = new Image();
-viharQuestion.src = 'assets/images/badges/vihar.webp';
-let viharAnswer = new Image();
-viharAnswer.src = 'assets/images/badges/vihar.webp';
-let warriorsQuestion = new Image();
-warriorsQuestion.src = 'assets/images/badges/warriors-question.webp';
-let warriorsAnswer = new Image();
-warriorsAnswer.src = 'assets/images/badges/warriors-answer.webp';
-let watfordQuestion = new Image();
-watfordQuestion.src = 'assets/images/badges/watford-question.webp';
-let watfordAnswer = new Image();
-watfordAnswer.src = 'assets/images/badges/watford-answer.webp';
-
-//push images to array for images to be called
-var badges = [];
-badges.push(alloaQuestion, alloaAnswer, araguainaQuestion, araguainaAnswer, beneventoQuestion, beneventoAnswer,
-    burtonQuestion, burtonAnswer, caravelQuestion, caravelAnswer, changchunQuestion, changchunAnswer,
-    espoliQuestion, espoliAnswer, faetanoQuestion, faetanoAnswer, falubazQuestion, falubazQuestion,
-    feniQuestion, feniAnswer, hashtagQuestion, hashtagAnswer, kugsakQuestion, kugsakQuestion,
-    likhopoQuestion, likhopoAnswer, limonQuestion, limonAnswer, lincolnQuestion, lincolnAnswer,
-    missileQuestion, missileAnswer, nobQuestion, nobAnswer, pavlikeniQuestion, pavlikeniAnswer,
-    santaQuestion, santaAnswer, sheikhQuestion, sheikhAnswer, santosQuestion, santosAnswer, 
-    sousaQuestion, sousaAnswer, totQuestion, totAnswer, viharQuestion, viharAnswer, warriorsQuestion, warriorsAnswer,
-    watfordQuestion, warriorsAnswer
-);
-
-//questions 
+//questions with image paths
 var questions = [
     {
         question: "assets/images/badges/alloa-question.webp",
@@ -158,196 +39,196 @@ var questions = [
         correctImage: "assets/images/badges/alloa-answer.webp"
     },
     {
-        question: araguainaQuestion,
+        question: "assets/images/badges/araguaina-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: araguainaAnswer
+        correctImage: "assets/images/badges/araguaina-answer.webp"
     },
     {
-        question: beneventoQuestion,
+        question: "assets/images/badges/benevento-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: beneventoAnswer
+        correctImage: "assets/images/badges/benevento-answer.webp"
     },
     {
-        question: burtonQuestion,
+        question: "assets/images/badges/burton-athletic.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: burtonAnswer
+        correctImage: "assets/images/badges/burton-athletic.webp"
     },
     {
-        question: caravelQuestion,
+        question: "assets/images/badges/caravel-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: caravelAnswer
+        correctImage: "assets/images/badges/caravel-answer.webp"
     },
     {
-        question: changchunQuestion,
+        question: "assets/images/badges/changchun-yatai-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: changchunAnswer
+        correctImage: "assets/images/badges/changchun-yatai-answer.webp"
     },
     {
-        question: espoliQuestion,
+        question: "assets/images/badges/espoli-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: espoliAnswer
+        correctImage: "assets/images/badges/espoli-answer.webp"
     },
     {
-        question: faetanoQuestion,
+        question: "assets/images/badges/faetano-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: faetanoAnswer
+        correctImage: "assets/images/badges/faetano-answer.webp"
     },
     {
-        question: falubazQuestion,
+        question: "assets/images/badges/falubaz.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: falubazAnswer
+        correctImage: "assets/images/badges/falubaz.webp"
     },
     {
-        question: feniQuestion,
+        question: "assets/images/badges/feni-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: feniAnswer
+        correctImage: "assets/images/badges/feni-answer.webp"
     },
     {
-        question: hashtagQuestion,
+        question: "assets/images/badges/hashtag-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: hashtagAnswer
+        correctImage: "assets/images/badges/hashtag-answer.webp"
     },
     {
-        question: kugsakQuestion,
+        question: "assets/images/badges/kugsak-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: kugsakAnswer
+        correctImage: "assets/images/badges/kugsak-question.webp"
     },
     {
-        question: likhopoQuestion,
+        question: "assets/images/badges/likhopo-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: likhopoAnswer
+        correctImage: "assets/images/badges/likhopo-answer.webp"
     },
     {
-        question: limonQuestion,
+        question: "assets/images/badges/limon-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: limonAnswer
+        correctImage: "assets/images/badges/limon-answer.webp"
     },
     {
-        question: lincolnQuestion,
+        question: "assets/images/badges/lincoln-red-imps-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: lincolnAnswer
+        correctImage: "assets/images/badges/limon-answer.webp"
     },
     {
-        question: nobQuestion,
+        question: "assets/images/badges/newells-old-boys.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: nobAnswer
+        correctImage: "assets/images/badges/newells-old-boys.webp"
     },
     {
-        question: pavlikeniQuestion,
+        question: "assets/images/badges/pavlikeni.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: pavlikeniAnswer
+        correctImage: "assets/images/badges/pavlikeni.webp"
     },
     {
-        question: santaQuestion,
+        question: "assets/images/badges/santa-claus-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: santaAnswer
+        correctImage: "assets/images/badges/santa-claus-answer.webp"
     },
     {
-        question: santosQuestion,
+        question: "assets/images/badges/santos-rsa-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: santosAnswer
+        correctImage: "assets/images/badges/santos-rsa-answer.webp"
     },
     {
-        question: sheikhQuestion,
+        question: "assets/images/badges/sheikh-russel.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: sheikhAnswer
+        correctImage: "assets/images/badges/sheikh-russel.webp"
     },
     {
-        question: sousaQuestion,
+        question: "assets/images/badges/sousa-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: sousaAnswer
+        correctImage: "assets/images/badges/sousa-answer.webp"
     },
     {
-        question: totQuestion,
+        question: "assets/images/badges/tot-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: totAnswer
+        correctImage: "assets/images/badges/tot-answer.webp"
     },
     {
-        question: viharQuestion,
+        question: "assets/images/badges/vihar.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: viharAnswer
+        correctImage: "assets/images/badges/vihar.webp"
     },
     {
-        question: warriorsQuestion,
+        question: "assets/images/badges/warriors-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: warriorsAnswer
+        correctImage: "assets/images/badges/warriors-answer.webp"
     },
     {
-        question: watfordQuestion,
+        question: "assets/images/badges/watford-question.webp",
         optionA: "test",
         optionB: "test",
         optionC: "test",
         correctOption: "test",
-        correctImage: warriorsAnswer
+        correctImage: "assets/images/badges/watford-answer.webp"
     }
 ]
 
@@ -365,7 +246,7 @@ function nextQuestion() {
     const currentQuestion = getRandomQuestion();
     document.getElementById("question-number").innerHTML = questionNumber;
     document.getElementById("player-score").innerHTML = playerScore;
-    document.getElementById("badge").appendChild = currentQuestion.question;
+    document.getElementById("question-badge").src = currentQuestion.question;
     document.getElementById("answer1").innerHTML = currentQuestion.optionA;
     document.getElementById("answer2").innerHTML = currentQuestion.optionB;
     document.getElementById("answer3").innerHTML = currentQuestion.optionC;
