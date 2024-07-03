@@ -134,7 +134,7 @@ watfordQuestion.src = 'assets/images/badges/watford-question.webp';
 let watfordAnswer = new Image();
 watfordAnswer.src = 'assets/images/badges/watford-answer.webp';
 
-//push images to array for questions to be called
+//push images to array for images to be called
 var badges = [];
 badges.push(alloaQuestion, alloaAnswer, araguainaQuestion, araguainaAnswer, beneventoQuestion, beneventoAnswer,
     burtonQuestion, burtonAnswer, caravelQuestion, caravelAnswer, changchunQuestion, changchunAnswer,
@@ -148,206 +148,227 @@ badges.push(alloaQuestion, alloaAnswer, araguainaQuestion, araguainaAnswer, bene
 );
 
 //questions 
-var myQuestions = [
+var questions = [
     {
-        question: alloaQuestion,
+        question: "assets/images/badges/alloa-question.webp",
         optionA: "Alloa Athletic",
         optionB: "Beecraig Town",
         optionC: "Hench Hornets FC",
         correctOption: "optionA",
-        correctImage: alloaAnswer
+        correctImage: "assets/images/badges/alloa-answer.webp"
     },
     {
         question: araguainaQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: araguainaAnswer
     },
     {
         question: beneventoQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: beneventoAnswer
     },
     {
         question: burtonQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: burtonAnswer
     },
     {
         question: caravelQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: caravelAnswer
     },
     {
         question: changchunQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: changchunAnswer
     },
     {
         question: espoliQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: espoliAnswer
     },
     {
         question: faetanoQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: faetanoAnswer
     },
     {
         question: falubazQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: falubazAnswer
     },
     {
         question: feniQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: feniAnswer
     },
     {
         question: hashtagQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: hashtagAnswer
     },
     {
         question: kugsakQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: kugsakAnswer
     },
     {
         question: likhopoQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: likhopoAnswer
     },
     {
         question: limonQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: limonAnswer
     },
     {
         question: lincolnQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: lincolnAnswer
     },
     {
         question: nobQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: nobAnswer
     },
     {
         question: pavlikeniQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: pavlikeniAnswer
     },
     {
         question: santaQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: santaAnswer
     },
     {
         question: santosQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: santosAnswer
     },
     {
         question: sheikhQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: sheikhAnswer
     },
     {
         question: sousaQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: sousaAnswer
     },
     {
         question: totQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: totAnswer
     },
     {
         question: viharQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: viharAnswer
     },
     {
         question: warriorsQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: warriorsAnswer
     },
     {
         question: watfordQuestion,
-        optionA: "",
-        optionB: "",
-        optionC: "",
-        correctOption: "",
+        optionA: "test",
+        optionB: "test",
+        optionC: "test",
+        correctOption: "test",
         correctImage: warriorsAnswer
     }
 ]
+
+function getRandomQuestion() {
+    var randomIndex = Math.floor(Math.random() * questions.length);
+    return questions[randomIndex];
+  }
+
+let questionNumber = 1 //holds the current question number
+let playerScore = 0  //holds the player score
+let wrongAttempt = 0 //amount of wrong answers picked by player
+let indexNumber = 0 //will be used in displaying next question
+
+function nextQuestion() {
+    const currentQuestion = getRandomQuestion();
+    document.getElementById("question-number").innerHTML = questionNumber;
+    document.getElementById("player-score").innerHTML = playerScore;
+    document.getElementById("badge").appendChild = currentQuestion.question;
+    document.getElementById("answer1").innerHTML = currentQuestion.optionA;
+    document.getElementById("answer2").innerHTML = currentQuestion.optionB;
+    document.getElementById("answer3").innerHTML = currentQuestion.optionC;
+}
+
 
