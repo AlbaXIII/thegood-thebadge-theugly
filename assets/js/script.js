@@ -1,7 +1,12 @@
 //initialize quiz variables
 document.addEventListener('DOMContentLoaded', () => {
   });
-  
+
+const begin = document.getElementById('begin');
+const next = document.getElementById('next');
+const badgeSpace = document.getElementById('badge-space');
+const answerButtons = document.getElementsByClassName('btn');
+
 // script to create and store local username
 let userName = document.getElementById('username-input').value;
 let sigupButton = document.getElementById('signup');
@@ -21,14 +26,18 @@ function startGame() {
     document.getElementById('signup-space').style.display = 'none';
     document.getElementById('badge-space').style.display = 'inline-block';
     document.getElementById('answer-space').style.display = 'inline-block';
+    nextQuestion();
 }
 
 begin.addEventListener('click', function (event) {
     event.preventDefault();
     startGame();
+    nextQuestion();
 });
 
-//questions with image paths
+let shuffledQuestions, currentQuestionIndex;
+
+//questions with image src paths
 var questions = [
     {
         questionId: 1,
@@ -36,7 +45,7 @@ var questions = [
         optionA: "Alloa Athletic",
         optionB: "Beecraig Town",
         optionC: "Hench Hornets FC",
-        correctOption: "optionA",
+        correctOption: "Alloa Athletic",
         correctImage: "assets/images/badges/alloa-answer.webp"
     },
     {
@@ -45,7 +54,7 @@ var questions = [
         optionA: "Hereford United",
         optionB: "Araguaína Futebol",
         optionC: "Seattle Battle Cattle",
-        correctOption: "optionB",
+        correctOption: "Araguaína Futebol",
         correctImage: "assets/images/badges/araguaina-answer.webp"
     },
     {
@@ -54,7 +63,7 @@ var questions = [
         optionA: "Salem Calcio",
         optionB: "Benevento Calcio",
         optionC: "Pendle Calcio",
-        correctOption: "optionB",
+        correctOption: "Benevento Calcio",
         correctImage: "assets/images/badges/benevento-answer.webp"
     },
     {
@@ -63,7 +72,7 @@ var questions = [
         optionA: "Carling City",
         optionB: "Weatherspoon Wanderers",
         optionC: "Burton Albion",
-        correctOption: "optionC",
+        correctOption: "Burton Albion",
         correctImage: "assets/images/badges/burton-athletic.webp"
     },
     {
@@ -72,7 +81,7 @@ var questions = [
         optionA: "Independiente Caravel",
         optionB: "Piratas Negras Futbol",
         optionC: "Penzance Town",
-        correctOption: "optionA",
+        correctOption: "Independiente Caravel",
         correctImage: "assets/images/badges/caravel-answer.webp"
     },
     {
@@ -81,7 +90,7 @@ var questions = [
         optionA: "Guangzhou FC",
         optionB: "Changchun Yatai FC",
         optionC: "Hebei FC",
-        correctOption: "optionB",
+        correctOption: "Changchun Yatai FC",
         correctImage: "assets/images/badges/changchun-yatai-answer.webp"
     },
     {
@@ -90,7 +99,7 @@ var questions = [
         optionA: "Súper Pollos",
         optionB: "CD Espoli",
         optionC: "LDU Quito",
-        correctOption: "optionB",
+        correctOption: "CD Espoli",
         correctImage: "assets/images/badges/espoli-answer.webp"
     },
     {   
@@ -99,7 +108,7 @@ var questions = [
         optionA: "Tricky Trees Town",
         optionB: "Árvores Complicadas",
         optionC: "SC Faetano",
-        correctOption: "optionC",
+        correctOption: "SC Faetano",
         correctImage: "assets/images/badges/faetano-answer.webp"
     },
     {   
@@ -108,7 +117,7 @@ var questions = [
         optionA: "Falubaz Zielona Góra",
         optionB: "Anaheim City",
         optionC: "Disneyland Fives",
-        correctOption: "optionA",
+        correctOption: "Falubaz Zielona Góra",
         correctImage: "assets/images/badges/falubaz.webp"
     },
     {   
@@ -117,7 +126,7 @@ var questions = [
         optionA: "Dado SC",
         optionB: "Levy SC",
         optionC: "Feni SC",
-        correctOption: "optionC",
+        correctOption: "Feni SC",
         correctImage: "assets/images/badges/feni-answer.webp"
     },
     {
@@ -126,7 +135,7 @@ var questions = [
         optionA: "Hashtag United",
         optionB: "Influencers United",
         optionC: "The Team Formerly Known As Twitter FC",
-        correctOption: "optionA",
+        correctOption: "Hashtag United",
         correctImage: "assets/images/badges/hashtag-answer.webp"
     },
     {
@@ -135,7 +144,7 @@ var questions = [
         optionA: "Sealpunch-72",
         optionB: "Kugsak-45",
         optionC: "Hakarl-02",
-        correctOption: "optionB",
+        correctOption: "Kugsak-45",
         correctImage: "assets/images/badges/kugsak-question.webp"
     },
     {   
@@ -144,7 +153,7 @@ var questions = [
         optionA: "FC Maseru",
         optionB: "FC NHS",
         optionC: "FC Likhopo",
-        correctOption: "optionC",
+        correctOption: "FC Likhopo",
         correctImage: "assets/images/badges/likhopo-answer.webp"
     },
     {
@@ -153,7 +162,7 @@ var questions = [
         optionA: "Huracán CF",
         optionB: "Real Viento",
         optionC: "Limón FC",
-        correctOption: "optionC",
+        correctOption: "Limón FC",
         correctImage: "assets/images/badges/limon-answer.webp"
     },
     {
@@ -162,7 +171,7 @@ var questions = [
         optionA: "Lincoln Red Imps",
         optionB: "Boston Crimson Gremlins",
         optionC: "Grimsby Scarlet Devils",
-        correctOption: "optionA",
+        correctOption: "Lincoln Red Imps",
         correctImage: "assets/images/badges/limon-answer.webp"
     },
     {
@@ -171,7 +180,7 @@ var questions = [
         optionA: "Missile FC",
         optionB: "ICBM FC",
         optionC: "Nucléaires FC",
-        correctOption: "optionA",
+        correctOption: "Missile FC",
         correctImage: "assets/images/badges/missile-answer.webp"
     },
     {   
@@ -180,7 +189,7 @@ var questions = [
         optionA: "Newell's Old Boys",
         optionB: "Norbert's Odd Bench",
         optionC: "Neville's Olympic Ball",
-        correctOption: "optionA",
+        correctOption: "Newell's Old Boys",
         correctImage: "assets/images/badges/newells-old-boys.webp"
     },
     {   
@@ -189,7 +198,7 @@ var questions = [
         optionA: "Topka",
         optionB: "FC Grafichna Kolektsiya",
         optionC: "FC Pavlikeni",
-        correctOption: "optionC",
+        correctOption: "FC Pavlikeni",
         correctImage: "assets/images/badges/pavlikeni.webp"
     },
     {
@@ -198,7 +207,7 @@ var questions = [
         optionA: "FC Lapland",
         optionB: "FC Santa Claus",
         optionC: "FC Naughty List",
-        correctOption: "optionB",
+        correctOption: "FC Santa Claus",
         correctImage: "assets/images/badges/santa-claus-answer.webp"
     },
     {   
@@ -207,7 +216,7 @@ var questions = [
         optionA: "Clipart FC",
         optionB: "Jam FC",
         optionC: "Santos FC",
-        correctOption: "optionC",
+        correctOption: "Santos FC",
         correctImage: "assets/images/badges/santos-rsa-answer.webp"
     },
     {
@@ -216,7 +225,7 @@ var questions = [
         optionA: "Sheikh Russel KC",
         optionB: "Sheikh David KC",
         optionC: "Sheikh Keith KC",
-        correctOption: "optionA",
+        correctOption: "Sheikh Russel KC",
         correctImage: "assets/images/badges/sheikh-russel.webp"
     },
     {   
@@ -225,7 +234,7 @@ var questions = [
         optionA: "Kaiju Verdy",
         optionB: "FC Toho",
         optionC: "Sousa Esporte Clube",
-        correctOption: "optionC",
+        correctOption: "Sousa Esporte Clube",
         correctImage: "assets/images/badges/sousa-answer.webp"
     },
     {   
@@ -234,7 +243,7 @@ var questions = [
         optionA: "BT FC",
         optionB: "TOT SC",
         optionC: "TNS",
-        correctOption: "optionB",
+        correctOption: "TOT SC",
         correctImage: "assets/images/badges/tot-answer.webp"
     },
     {
@@ -243,7 +252,7 @@ var questions = [
         optionA: "Warriors FC",
         optionB: "Gladiators FC",
         optionC: "Rocksteady FC",
-        correctOption: "optionA",
+        correctOption: "Warriors FC",
         correctImage: "assets/images/badges/warriors-answer.webp"
     },
     {
@@ -252,7 +261,7 @@ var questions = [
         optionA: "Winnipeg",
         optionB: "Welkin",
         optionC: "Watford",
-        correctOption: "optionC",
+        correctOption: "Watford",
         correctImage: "assets/images/badges/watford-answer.webp"
     }
 ]
@@ -267,7 +276,7 @@ let playerScore = 0  //holds the player score
 let wrongAttempt = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
 
-function nextQuestion() {
+function nextQuestion(question) {
     const currentQuestion = getRandomQuestion();
     document.getElementById("question-number").innerHTML = questionNumber;
     document.getElementById("player-score").innerHTML = playerScore;
@@ -275,8 +284,5 @@ function nextQuestion() {
     document.getElementById("answer1").innerHTML = currentQuestion.optionA;
     document.getElementById("answer2").innerHTML = currentQuestion.optionB;
     document.getElementById("answer3").innerHTML = currentQuestion.optionC;
-    let usedQuestionsIds = [ 1, 2, 3, 4 , 5 , 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-    let filteredQuestions = questions.filter((question) => !usedQuestionsIds.includes(question.questionId));
 }
-
 
