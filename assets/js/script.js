@@ -272,7 +272,7 @@ let wrongAttempt = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
 let usedQuestionIds = []; //store used question IDs to avoid repeating same question images
 
-// pull random question from question array
+// pull random question from question array filtered by question IDs
 function getRandomQuestion() {
     const filteredQuestions = questions.filter((question) => !usedQuestionIds.includes(question.questionId));
     const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
@@ -281,11 +281,18 @@ function getRandomQuestion() {
 
 // send relevant question information to DOM by targeted elements
 function nextQuestion(question) {
+    if (usedQuestionIds.length > 0){
+        questionNumber++;
+    }
     const currentQuestion = getRandomQuestion();
+    usedQuestionIds.push(currentQuestion.questionId);
     document.getElementById("question-number").innerHTML = questionNumber;
     document.getElementById("player-score").innerHTML = playerScore;
     document.getElementById("question-badge").src = currentQuestion.question;
     document.getElementById("answer1").innerHTML = currentQuestion.optionA;
     document.getElementById("answer2").innerHTML = currentQuestion.optionB;
     document.getElementById("answer3").innerHTML = currentQuestion.optionC;
+    console.log(usedQuestionIds);
+    console.log(currentQuestion);
 }
+
