@@ -2,41 +2,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   });
 
-const begin = document.getElementById('begin');
-const next = document.getElementById('next');
-const badgeSpace = document.getElementById('badge-space');
-const answerButtons = document.getElementsByClassName('btn');
-
-// script to create and store local username
-let userName = document.getElementById('username-input').value;
-let sigupButton = document.getElementById('signup');
-
-signup.addEventListener('click', function (event) {
-    event.preventDefault();
-    let userName = document.getElementById('username-input').value;
-    localStorage.setItem('userName', userName);
-    alert("Welcome " + userName + "!")
-    console.log("player " + localStorage.getItem('userName'));
-});
-
-// reveal game space
-function startGame() {
-    let gameStart = "starting game...";
-    console.log(gameStart);
-    document.getElementById('signup-space').style.display = 'none';
-    document.getElementById('badge-space').style.display = 'inline-block';
-    document.getElementById('answer-space').style.display = 'inline-block';
-    nextQuestion();
-}
-
-begin.addEventListener('click', function (event) {
-    event.preventDefault();
-    startGame();
-    nextQuestion();
-});
-
-let shuffledQuestions, currentQuestionIndex;
-
 //questions with image src paths
 var questions = [
     {
@@ -266,16 +231,48 @@ var questions = [
     }
 ]
 
-function getRandomQuestion() {
-    var randomIndex = Math.floor(Math.random() * questions.length);
-    return questions[randomIndex];
-  }
+// script to create and store local username
+let sigupButton = document.getElementById('signup');
+
+signup.addEventListener('click', function (event) {
+    event.preventDefault();
+    let userName = document.getElementById('username-input').value;
+    localStorage.setItem('userName', userName);
+    alert("Welcome " + userName + "!")
+    console.log("player " + localStorage.getItem('userName'));
+});
+
+// reveal game space
+function startGame() {
+    let gameStart = "starting game...";
+    console.log(gameStart);
+    // hide username input and show game space
+    document.getElementById('signup-space').style.display = 'none';
+    document.getElementById('badge-space').style.display = 'inline-block';
+    document.getElementById('answer-space').style.display = 'inline-block';
+    nextQuestion();
+}
+
+// start game on begin button input
+begin.addEventListener('click', function (event) {
+    event.preventDefault();
+    startGame();
+    nextQuestion();
+});
 
 let questionNumber = 1 //holds the current question number
 let playerScore = 0  //holds the player score
 let wrongAttempt = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
+let usedQuestionIds = []; //store used question IDs to avoid repeating same question images
 
+// pull random question from question array
+function getRandomQuestion() {
+    var randomIndex = Math.floor(Math.random() * questions.length);
+    return questions[randomIndex];
+  }
+
+// send relevant question information to DOM by targeted elements
 function nextQuestion(question) {
     const currentQuestion = getRandomQuestion();
     document.getElementById("question-number").innerHTML = questionNumber;
@@ -285,4 +282,3 @@ function nextQuestion(question) {
     document.getElementById("answer2").innerHTML = currentQuestion.optionB;
     document.getElementById("answer3").innerHTML = currentQuestion.optionC;
 }
-
