@@ -234,12 +234,19 @@ var questions = [
 // script to create and store local username
 let sigupButton = document.getElementById('signup');
 
-signup.addEventListener('click', function (event) {
+sigupButton.addEventListener('click', function (event) {
     event.preventDefault();
     let userName = document.getElementById('username-input').value;
-    localStorage.setItem('userName', userName);
-    alert("Welcome " + userName + "!")
-    console.log("player " + localStorage.getItem('userName'));
+  
+    if (userName !== "") {
+      localStorage.setItem('userName', userName);
+      alert("Welcome " + userName + "!");
+      console.log("player " + localStorage.getItem('userName'));
+      document.getElementById("begin").style.display = "";
+      document.getElementById("signup").style.display = "none";
+    } else {
+      alert("Input cannot be empty! Please enter your name.");
+    }
 });
 
 // reveal game space
@@ -257,7 +264,6 @@ function startGame() {
 begin.addEventListener('click', function (event) {
     event.preventDefault();
     startGame();
-    nextQuestion();
 });
 
 let questionNumber = 1 //holds the current question number
