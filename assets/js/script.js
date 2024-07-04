@@ -245,7 +245,7 @@ sigupButton.addEventListener('click', function (event) {
       document.getElementById("begin").style.display = "";
       document.getElementById("signup").style.display = "none";
     } else {
-      alert("Input cannot be empty! Please enter your name.");
+      alert("Username cannot be empty! Please enter a username.");
     }
 });
 
@@ -274,8 +274,9 @@ let usedQuestionIds = []; //store used question IDs to avoid repeating same ques
 
 // pull random question from question array
 function getRandomQuestion() {
-    var randomIndex = Math.floor(Math.random() * questions.length);
-    return questions[randomIndex];
+    const filteredQuestions = questions.filter((question) => !usedQuestionIds.includes(question.questionId));
+    const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
+    return filteredQuestions[randomIndex];
   }
 
 // send relevant question information to DOM by targeted elements
