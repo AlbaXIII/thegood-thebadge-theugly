@@ -279,11 +279,12 @@ function getRandomQuestion() {
     return filteredQuestions[randomIndex];
   }
 
-// send relevant question information to DOM by targeted elements
+// filter used questions by Ids
 function nextQuestion(question) {
     if (usedQuestionIds.length > 0){
         questionNumber++;
     }
+    // send relevant question information to DOM by targeted elements
     const currentQuestion = getRandomQuestion();
     usedQuestionIds.push(currentQuestion.questionId);
     document.getElementById("question-number").innerHTML = questionNumber;
@@ -292,7 +293,29 @@ function nextQuestion(question) {
     document.getElementById("answer1").innerHTML = currentQuestion.optionA;
     document.getElementById("answer2").innerHTML = currentQuestion.optionB;
     document.getElementById("answer3").innerHTML = currentQuestion.optionC;
+    // log used questions to the console
     console.log(usedQuestionIds);
     console.log(currentQuestion);
 }
 
+
+function maxQuestions(){}
+
+function checkAnswer(userAnswer) {
+    if (userAnswer === questions[currentQuestion].correctOption) {
+        alert("Correct!");
+        score = score + 1;
+    } else {
+        alert("Sorry, that's not correct.");
+    }
+
+    currentQuestion = currentQuestion + 1;
+    nextQuestion(questions[currentQuestion]);
+}
+
+
+
+
+function calculateScore(){}
+
+function resetQuiz(){}
