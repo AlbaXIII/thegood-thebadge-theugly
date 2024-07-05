@@ -41,9 +41,10 @@
             <div id="badge">
                 <img id="question-badge" src="" alt="">
                 <img id="answer-badge" src="" alt="">
+                <div id="question-placeholder"></div>
             </div>
             <!-- Progress bar 1/5 -->
-            <h3>Score : <span id="player-score"></span> / 5</h3>
+            <h3>Score : <span id="player-score"></span> / 10</h3>
             <h3> Question : <span id="question-number"></span> / 5</h3>
             <progress class="progress" max="100" value="10"></progress>
             <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
@@ -59,7 +60,7 @@
             </div> 
             <!-- next question button -->
             <div class="next-button-container">
-                <button id="next" onclick="nextQuestion()">Next Question</button>
+                <button id="next" onclick="getQuestion()">Next Question</button>
             </div>
             <!-- reset button to break game early or reset -->
             <button type="reset" id="reset">Start Over</button>

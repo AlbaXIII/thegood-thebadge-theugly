@@ -291,14 +291,16 @@ function resetQuiz() {
 }
 
 
-// filter used questions by Ids
-function nextQuestion(question) {
-    if (usedQuestionIds.length > 0){
+// load next question filtered by ID
+function getQuestion(question) {
+    // set max questions
+    if (usedQuestionIds.length < 10){
         questionNumber++;
-    }
+    document.querySelector('.progress').value = questionNumber + "0";
     // send relevant question information to DOM by targeted elements
-    const currentQuestion = getRandomQuestion();
+    currentQuestion = getRandomQuestion();
     usedQuestionIds.push(currentQuestion.questionId);
+    //document.getElementById("question-placeholder").innerText = "question id: " + currentQuestion.questionId;
     document.getElementById("question-number").innerHTML = questionNumber;
     document.getElementById("player-score").innerHTML = playerScore;
     document.getElementById("question-badge").src = currentQuestion.question;
@@ -308,6 +310,11 @@ function nextQuestion(question) {
     // log used questions to the console
     console.log(usedQuestionIds);
     console.log(currentQuestion);
+    } else {
+        alert("Game Over! Thank you for playing.");
+        document.getElementById("answer-space").style.display = "none";
+        document.getElementById("playAgainBtn").style.display = "block";
+    }
 }
 
 // check answer to current question
