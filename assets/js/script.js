@@ -323,12 +323,13 @@ function checkAnswer(event) {
     if (event.target.innerText === currentQuestion.correctOption) {
       console.log("Correct ", currentQuestion.correctOption)
       playerScore++;
+      document.getElementById("question-badge").src = currentQuestion.correctImage;
       document.getElementById("player-score").innerHTML = playerScore;
       alert("Correct! " + currentQuestion.correctOption)
-      getQuestion();
     } else {
-      alert("Incorrect! " + event.target.innerText);
+      alert("Incorrect! " + currentQuestion.correctOption);
       wrongAttempts++;
+      document.getElementById("question-badge").src = currentQuestion.correctImage;
       document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
     }
   }
