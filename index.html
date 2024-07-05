@@ -46,15 +46,16 @@
             <h3>Score : <span id="player-score"></span> / 5</h3>
             <h3> Question : <span id="question-number"></span> / 5</h3>
             <progress class="progress" max="100" value="10"></progress>
+            <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
         </div>
 
         <!-- Answer space for answer buttons -->
         <div id="answer-space">
             <!-- answer options values a to c -->
             <div id="answer-input">
-                <button id="answer1" class="btn">answer1</button>
-                <button id="answer2" class="btn">answer2</button>
-                <button id="answer3" class="btn">answer3</button>
+                <button id="answer1" class="btn" onclick="checkAnswer()">answer1</button>
+                <button id="answer2" class="btn" onclick="checkAnswer()">answer2</button>
+                <button id="answer3" class="btn" onclick="checkAnswer()">answer3</button>
             </div> 
             <!-- next question button -->
             <div class="next-button-container">

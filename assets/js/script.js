@@ -270,7 +270,8 @@ let questionNumber = 1 //holds the current question number
 let playerScore = 0  //holds the player score
 let wrongAttempt = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
-let usedQuestionIds = []; //store used question IDs to avoid repeating same question images
+let usedQuestionIds = []; //store used question IDs to avoid repeating same question image
+let currentQuestion;
 
 // pull random question from question array filtered by question IDs
 function getRandomQuestion() {
@@ -278,6 +279,17 @@ function getRandomQuestion() {
     const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
     return filteredQuestions[randomIndex];
   }
+
+// reset state
+function resetQuiz() {
+    usedQuestionIds = [];
+    questionNumber = 0;
+    playerscore = 0;
+    wrongAttempts = 0;
+    document.getElementById("playAgainBtn").style.display = "none";
+    startGame();
+}
+
 
 // filter used questions by Ids
 function nextQuestion(question) {
@@ -298,24 +310,9 @@ function nextQuestion(question) {
     console.log(currentQuestion);
 }
 
+// check answer to current question
+function checkAnswer() {}
 
-function maxQuestions(){}
-
-function checkAnswer(userAnswer) {
-    if (userAnswer === questions[currentQuestion].correctOption) {
-        alert("Correct!");
-        score = score + 1;
-    } else {
-        alert("Sorry, that's not correct.");
-    }
-
-    currentQuestion = currentQuestion + 1;
-    nextQuestion(questions[currentQuestion]);
-}
-
-
-
-
+// calculate final score
 function calculateScore(){}
 
-function resetQuiz(){}
