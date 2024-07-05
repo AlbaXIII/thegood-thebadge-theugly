@@ -257,7 +257,7 @@ function startGame() {
     document.getElementById('signup-space').style.display = 'none';
     document.getElementById('badge-space').style.display = 'inline-block';
     document.getElementById('answer-space').style.display = 'inline-block';
-    nextQuestion();
+    getQuestion();
 }
 
 // start game on begin button input
@@ -266,7 +266,7 @@ begin.addEventListener('click', function (event) {
     startGame();
 });
 
-let questionNumber = 1 //holds the current question number
+let questionNumber = 0 //holds the current question number
 let playerScore = 0  //holds the player score
 let wrongAttempt = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
@@ -318,7 +318,9 @@ function getQuestion(question) {
 }
 
 // check answer to current question
-function checkAnswer() {}
+function checkAnswer(event) {
+
+}
 
 // calculate final score
 function calculateScore(){}
