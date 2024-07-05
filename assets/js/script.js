@@ -268,7 +268,7 @@ begin.addEventListener('click', function (event) {
 
 let questionNumber = 0 //holds the current question number
 let playerScore = 0  //holds the player score
-let wrongAttempt = 0 //amount of wrong answers picked by player
+let wrongAttempts = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
 let usedQuestionIds = []; //store used question IDs to avoid repeating same question image
 let currentQuestion;
@@ -289,7 +289,6 @@ function resetQuiz() {
     document.getElementById("playAgainBtn").style.display = "none";
     startGame();
 }
-
 
 // load next question filtered by ID
 function getQuestion(question) {
@@ -319,8 +318,20 @@ function getQuestion(question) {
 
 // check answer to current question
 function checkAnswer(event) {
-
-}
+    console.log(event.target.innerText)
+    
+    if (event.target.innerText === currentQuestion.correctOption) {
+      console.log("Correct ", currentQuestion.correctOption)
+      playerScore++;
+      document.getElementById("player-score").innerHTML = playerScore;
+      alert("Correct! " + currentQuestion.correctOption)
+      getQuestion();
+    } else {
+      alert("Incorrect! " + event.target.innerText);
+      wrongAttempts++;
+      document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
+    }
+  }
 
 // calculate final score
 function calculateScore(){}

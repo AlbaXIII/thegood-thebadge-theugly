@@ -45,6 +45,7 @@
             </div>
             <!-- Progress bar 1/5 -->
             <h3>Score : <span id="player-score"></span> / 10</h3>
+            <h3>Wrong attempts : <span id="wrong-attempts">0</span></h3>
             <h3> Question : <span id="question-number"></span> / 10</h3>
             <progress class="progress" max="100" value="10"></progress>
             <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
@@ -54,16 +55,16 @@
         <div id="answer-space">
             <!-- answer options values a to c -->
             <div id="answer-input">
-                <button id="answer1" class="btn" onclick="checkAnswer()">answer1</button>
-                <button id="answer2" class="btn" onclick="checkAnswer()">answer2</button>
-                <button id="answer3" class="btn" onclick="checkAnswer()">answer3</button>
+                <button id="answer1" class="btn" onclick="checkAnswer(event)">answer1</button>
+                <button id="answer2" class="btn" onclick="checkAnswer(event)">answer2</button>
+                <button id="answer3" class="btn" onclick="checkAnswer(event)">answer3</button>
             </div> 
             <!-- next question button -->
             <div class="next-button-container">
                 <button id="next" onclick="getQuestion()">Next Question</button>
             </div>
             <!-- reset button to break game early or reset -->
-            <button type="reset" id="reset">Start Over</button>
+            <button type="reset" onclick="resetQuiz()" id="reset">Start Over</button>
         </div>
     </div>
     <!-- Javascript link -->
