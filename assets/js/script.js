@@ -301,6 +301,7 @@ function resetQuiz() {
 
 // load next question filtered by ID
 function getQuestion(question) {
+    document.getElementById("next").style.display = "none";
     // set max questions
     if (usedQuestionIds.length < 10){
         questionNumber++;
@@ -321,7 +322,7 @@ function getQuestion(question) {
     } else {
         alert("Game Over! Thank you for playing.");
         document.getElementById("answer-space").style.display = "none";
-        document.getElementById("playAgainBtn").style.display = "block";
+        document.getElementById("playAgainBtn").style.display = "inline";
     }
 }
 
@@ -341,6 +342,7 @@ function checkAnswer(event) {
       document.getElementById("question-badge").src = currentQuestion.correctImage;
       document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
     }
+    document.getElementById("next").style.display = "inline";
   }
 
 // calculate final score
