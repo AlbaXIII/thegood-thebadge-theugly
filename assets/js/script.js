@@ -228,6 +228,15 @@ var questions = [
         optionC: "Watford",
         correctOption: "Watford",
         correctImage: "assets/images/badges/watford-answer.webp"
+    },
+    {
+        questionId: 26,
+        question: "assets/images/badges/sexypoyt-question.webp",
+        optionA: "SexyPöxyt",
+        optionB: "Espoo",
+        optionC: "HöttPantts",
+        correctOption: "SexyPöxyt",
+        correctImage: "assets/images/badges/sexypoyt-answer.webp"
     }
 ]
 
@@ -327,7 +336,7 @@ function checkAnswer(event) {
       document.getElementById("player-score").innerHTML = playerScore;
       alert("Correct! " + currentQuestion.correctOption)
     } else {
-      alert("Incorrect! " + currentQuestion.correctOption);
+      alert("Incorrect! The correct answer is " + currentQuestion.correctOption);
       wrongAttempts++;
       document.getElementById("question-badge").src = currentQuestion.correctImage;
       document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
