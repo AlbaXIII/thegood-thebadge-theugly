@@ -99,7 +99,7 @@ var questions = [
         question: "assets/images/badges/hashtag-question.webp",
         optionA: "Hashtag United",
         optionB: "Influencers United",
-        optionC: "The Team Formerly Known As Twitter FC",
+        optionC: "The Team Formerly Known As Twitter United",
         correctOption: "Hashtag United",
         correctImage: "assets/images/badges/hashtag-answer.webp"
     },
