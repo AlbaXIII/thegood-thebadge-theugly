@@ -6,9 +6,10 @@ Whilst thinking about a project idea to submit for Assignment 2, I stumbled upon
 
 With that in mind, the design philosophy would be to create a intiutive, clean and most of all enjoyable quiz with an clear scoring system and an ability to choose a username and record a high score.
 
-
-
 ## Features
+
+* Game Space
+    * 
 
 ## Testing
 

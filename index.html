@@ -49,16 +49,16 @@
                 <div id="question-placeholder"></div>
             </div>
             <!-- Progress bar 1/5 -->
-            <h3>Score : <span id="player-score"></span> / 10</h3>
+            <h3>Score : <span id="player-score">0</span> / 10</h3>
             <h3>Wrong : <span id="wrong-attempts">0</span></h3>
-            <h3> Question : <span id="question-number"></span> / 10</h3>
+            <h3> Question : <span id="question-number">1</span> / 10</h3>
             <progress class="progress" max="100" value="10"></progress>
             <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
         </div>
 
         <!-- Answer space for answer buttons -->
         <div id="answer-space">
-            <!-- answer options values a to c -->
+            <!-- answer options values 1 to 3 -->
             <div id="answer-input">
                 <button id="answer1" class="answer-btn" onclick="checkAnswer(event)">answer1</button>
                 <button id="answer2" class="answer-btn" onclick="checkAnswer(event)">answer2</button>

@@ -1,10 +1,8 @@
 //initialize quiz variables
-document.addEventListener('DOMContentLoaded', () => {
-  });
+document.addEventListener('DOMContentLoaded', () => {});
 
 //questions with image src paths
-var questions = [
-    {
+var questions = [{
         questionId: 1,
         question: "assets/images/badges/alloa-question.webp",
         optionA: "Alloa Athletic",
@@ -67,7 +65,7 @@ var questions = [
         correctOption: "CD Espoli",
         correctImage: "assets/images/badges/espoli-answer.webp"
     },
-    {   
+    {
         questionId: 8,
         question: "assets/images/badges/faetano-question.webp",
         optionA: "Tricky Trees Town",
@@ -76,7 +74,7 @@ var questions = [
         correctOption: "SC Faetano",
         correctImage: "assets/images/badges/faetano-answer.webp"
     },
-    {   
+    {
         questionId: 9,
         question: "assets/images/badges/falubaz.webp",
         optionA: "Falubaz Zielona Góra",
@@ -85,7 +83,7 @@ var questions = [
         correctOption: "Falubaz Zielona Góra",
         correctImage: "assets/images/badges/falubaz.webp"
     },
-    {   
+    {
         questionId: 10,
         question: "assets/images/badges/feni-question.webp",
         optionA: "Dado SC",
@@ -112,7 +110,7 @@ var questions = [
         correctOption: "Kugsak-45",
         correctImage: "assets/images/badges/kugsak-question.webp"
     },
-    {   
+    {
         questionId: 13,
         question: "assets/images/badges/likhopo-question.webp",
         optionA: "FC Maseru",
@@ -148,7 +146,7 @@ var questions = [
         correctOption: "Missile FC",
         correctImage: "assets/images/badges/missile-answer.webp"
     },
-    {   
+    {
         questionId: 17,
         question: "assets/images/badges/newells-old-boys.webp",
         optionA: "Newell's Old Boys",
@@ -157,7 +155,7 @@ var questions = [
         correctOption: "Newell's Old Boys",
         correctImage: "assets/images/badges/newells-old-boys.webp"
     },
-    {   
+    {
         questionId: 18,
         question: "assets/images/badges/pavlikeni.webp",
         optionA: "Topka",
@@ -175,7 +173,7 @@ var questions = [
         correctOption: "FC Santa Claus",
         correctImage: "assets/images/badges/santa-claus-answer.webp"
     },
-    {   
+    {
         questionId: 20,
         question: "assets/images/badges/santos-rsa-question.webp",
         optionA: "Clipart FC",
@@ -193,7 +191,7 @@ var questions = [
         correctOption: "Sheikh Russel KC",
         correctImage: "assets/images/badges/sheikh-russel.webp"
     },
-    {   
+    {
         questionId: 22,
         question: "assets/images/badges/sousa-question.webp",
         optionA: "Kaiju Verdy",
@@ -202,7 +200,7 @@ var questions = [
         correctOption: "Sousa Esporte Clube",
         correctImage: "assets/images/badges/sousa-answer.webp"
     },
-    {   
+    {
         questionId: 23,
         question: "assets/images/badges/tot-question.webp",
         optionA: "BT FC",
@@ -241,20 +239,21 @@ var questions = [
 ]
 
 // script to create and store local username
-let sigupButton = document.getElementById('signup');
+const sigupButton = document.getElementById('signup');
 
 sigupButton.addEventListener('click', function (event) {
     event.preventDefault();
     let userName = document.getElementById('username-input').value;
-  
+
     if (userName !== "") {
-      localStorage.setItem('userName', userName);
-      alert("Welcome " + userName + "!");
-      console.log("player " + localStorage.getItem('userName'));
-      document.getElementById("begin").style.display = "";
-      document.getElementById("signup").style.display = "none";
+        localStorage.setItem('userName', userName);
+        //switch out for something ingame
+        alert(`Welcome ${userName}!`);
+        console.log("player " + localStorage.getItem('userName'));
+        document.getElementById("begin").style.display = "";
+        document.getElementById("signup").style.display = "none";
     } else {
-      alert("Username cannot be empty! Please enter a username.");
+        alert("Username cannot be empty! Please enter a username.");
     }
 });
 
@@ -276,7 +275,7 @@ begin.addEventListener('click', function (event) {
 });
 
 let questionNumber = 0 //holds the current question number
-let playerScore = 0  //holds the player score
+let playerScore = 0 //holds the player score
 let wrongAttempts = 0 //amount of wrong answers picked by player
 let indexNumber = 0 //will be used in displaying next question
 let usedQuestionIds = []; //store used question IDs to avoid repeating same question image
@@ -287,9 +286,9 @@ function getRandomQuestion() {
     const filteredQuestions = questions.filter((question) => !usedQuestionIds.includes(question.questionId));
     const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
     return filteredQuestions[randomIndex];
-  }
+}
 
-// reset state
+// reset state needs work!
 function resetQuiz() {
     usedQuestionIds = [];
     questionNumber = 0;
@@ -303,22 +302,22 @@ function resetQuiz() {
 function getQuestion(question) {
     document.getElementById("next").style.display = "none";
     // set max questions
-    if (usedQuestionIds.length < 10){
+    if (usedQuestionIds.length < 10) {
         questionNumber++;
-    document.querySelector('.progress').value = questionNumber + "0";
-    // send relevant question information to DOM by targeted elements
-    currentQuestion = getRandomQuestion();
-    usedQuestionIds.push(currentQuestion.questionId);
-    //document.getElementById("question-placeholder").innerText = "question id: " + currentQuestion.questionId;
-    document.getElementById("question-number").innerHTML = questionNumber;
-    document.getElementById("player-score").innerHTML = playerScore;
-    document.getElementById("question-badge").src = currentQuestion.question;
-    document.getElementById("answer1").innerHTML = currentQuestion.optionA;
-    document.getElementById("answer2").innerHTML = currentQuestion.optionB;
-    document.getElementById("answer3").innerHTML = currentQuestion.optionC;
-    // log used questions to the console
-    console.log(usedQuestionIds);
-    console.log(currentQuestion);
+        document.querySelector('.progress').value = questionNumber + "0";
+        // send relevant question information to DOM by targeted elements
+        currentQuestion = getRandomQuestion();
+        usedQuestionIds.push(currentQuestion.questionId);
+        //document.getElementById("question-placeholder").innerText = "question id: " + currentQuestion.questionId;
+        document.getElementById("question-number").innerHTML = questionNumber;
+        document.getElementById("player-score").innerHTML = playerScore;
+        document.getElementById("question-badge").src = currentQuestion.question;
+        document.getElementById("answer1").innerHTML = currentQuestion.optionA;
+        document.getElementById("answer2").innerHTML = currentQuestion.optionB;
+        document.getElementById("answer3").innerHTML = currentQuestion.optionC;
+        // log used questions to the console
+        console.log(usedQuestionIds);
+        console.log(currentQuestion);
     } else {
         alert("Game Over! Thank you for playing.");
         document.getElementById("answer-space").style.display = "none";
@@ -329,22 +328,24 @@ function getQuestion(question) {
 // check answer to current question
 function checkAnswer(event) {
     console.log(event.target.innerText)
-    
     if (event.target.innerText === currentQuestion.correctOption) {
-      console.log("Correct ", currentQuestion.correctOption)
-      playerScore++;
-      document.getElementById("question-badge").src = currentQuestion.correctImage;
-      document.getElementById("player-score").innerHTML = playerScore;
-      alert("Correct! " + currentQuestion.correctOption)
+        console.log("Correct ", currentQuestion.correctOption),
+        event.target.classList.add("correct");
+        playerScore++;
+        document.getElementById("question-badge").src = currentQuestion.correctImage;
+        document.getElementById("player-score").innerHTML = playerScore;
+        alert("Correct! " + currentQuestion.correctOption)
     } else {
-      alert("Incorrect! The correct answer is " + currentQuestion.correctOption);
-      wrongAttempts++;
-      document.getElementById("question-badge").src = currentQuestion.correctImage;
-      document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
+        event.target.classList.add("incorrect");
+        alert("Incorrect! The correct answer is " + currentQuestion.correctOption);
+        wrongAttempts++;
+        document.getElementById("question-badge").src = currentQuestion.correctImage;
+        document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
     }
     document.getElementById("next").style.display = "inline";
-  }
+}
 
 // calculate final score
-function calculateScore(){}
-
+function calculateScore() {
+    
+}

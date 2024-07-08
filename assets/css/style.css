@@ -28,13 +28,13 @@ body {
     background-color: rgba(172, 230, 185, 0.7);
     box-sizing: border-box;
     width: 85%;
-    height: 70vh;
+    height: 72vh;
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
     border: 5px solid white;
 }
-    
+
 #signup-space {
     font-family: "Graduate", sans-serif;
     margin: auto;
@@ -72,6 +72,16 @@ h3 {
     text-align: center;
     font-size: 1rem;
     margin-top: 10px;
+}
+
+.correct {
+    background-color: rgba(145, 211, 127, 0.66);
+    border: 8px solid rgba(34, 255, 0, 1)
+}
+
+.incorrect {
+    background-color: rgba(233, 27, 27, 0.45);
+    border: 8px solid rgba(255, 0, 0, 1);
 }
 
 #next {
@@ -160,8 +170,8 @@ input {
     }
     
     .answer-btn {  
-
-
+        display: flex;
+        flex-direction: column;
     }
 
     #reset {
