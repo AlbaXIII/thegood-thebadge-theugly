@@ -21,6 +21,12 @@ body {
     letter-spacing: 3px;
     color: white;
 }
+
+#username-display {
+    text-align: center;
+    letter-spacing: 2px;
+    margin: 0px;
+}
     
 /* game space */
     

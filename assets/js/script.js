@@ -287,7 +287,7 @@ function getRandomQuestion() {
     return filteredQuestions[randomIndex];
 }
 
-// reset state needs work!
+// reset state 
 function resetQuiz() {
     usedQuestionIds = [];
     questionNumber = 0;
@@ -299,7 +299,9 @@ function resetQuiz() {
 
 // load next question filtered by ID
 function getQuestion(question) {
+    // hide next button till user input
     document.getElementById("next").style.display = "none";
+    // remove answer style class and enable answer buttons
     answer1.classList.remove("correct", "incorrect");
     answer2.classList.remove("correct", "incorrect");
     answer3.classList.remove("correct", "incorrect");
@@ -329,6 +331,7 @@ function getQuestion(question) {
     }
 }
 
+// declaring answer buttons 
 let answer1 = document.getElementById("answer1");
 let answer2 = document.getElementById("answer2");
 let answer3 = document.getElementById("answer3");
@@ -355,6 +358,7 @@ function checkAnswer(event) {
         document.getElementById("question-badge").src = currentQuestion.correctImage;
         document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
     }
+    // show next button and disable further answer inputs
     document.getElementById("next").style.display = "inline";
     answer1.disabled = true;
     answer2.disabled = true;
