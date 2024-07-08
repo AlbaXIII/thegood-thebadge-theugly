@@ -303,6 +303,9 @@ function getQuestion(question) {
     answer1.classList.remove("correct", "incorrect");
     answer2.classList.remove("correct", "incorrect");
     answer3.classList.remove("correct", "incorrect");
+    answer1.disabled = false;
+    answer2.disabled = false;
+    answer3.disabled = false;
     // set max questions
     if (usedQuestionIds.length < 10) {
         questionNumber++;
@@ -344,6 +347,9 @@ function checkAnswer(event) {
         document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
     }
     document.getElementById("next").style.display = "inline";
+    answer1.disabled = true;
+    answer2.disabled = true;
+    answer3.disabled = true;
 }
 
 // calculate final score
