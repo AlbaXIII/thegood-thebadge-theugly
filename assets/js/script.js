@@ -108,7 +108,7 @@ var questions = [{
         optionB: "Kugsak-45",
         optionC: "Hakarl-02",
         correctOption: "Kugsak-45",
-        correctImage: "assets/images/badges/kugsak-question.webp"
+        correctImage: "assets/images/badges/kugsak-answer.webp"
     },
     {
         questionId: 13,
