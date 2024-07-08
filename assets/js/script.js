@@ -300,7 +300,9 @@ function resetQuiz() {
 // load next question filtered by ID
 function getQuestion(question) {
     document.getElementById("next").style.display = "none";
-    document.getElementsByClassName("answer-btn").classList.remove("correct", "incorrect"); 
+    answer1.classList.remove("correct", "incorrect");
+    answer2.classList.remove("correct", "incorrect");
+    answer3.classList.remove("correct", "incorrect");
     // set max questions
     if (usedQuestionIds.length < 10) {
         questionNumber++;
@@ -308,7 +310,6 @@ function getQuestion(question) {
         // send relevant question information to DOM by targeted elements
         currentQuestion = getRandomQuestion();
         usedQuestionIds.push(currentQuestion.questionId);
-        //document.getElementById("question-placeholder").innerText = "question id: " + currentQuestion.questionId;
         document.getElementById("question-number").innerHTML = questionNumber;
         document.getElementById("player-score").innerHTML = playerScore;
         document.getElementById("question-badge").src = currentQuestion.question;
@@ -323,7 +324,6 @@ function getQuestion(question) {
         document.getElementById("answer-space").style.display = "none";
         document.getElementById("playAgainBtn").style.display = "inline";
     }
-    document.getElementById("answer-space").classList.remove("correct", "incorrect");
 }
 
 // check answer to current question
