@@ -248,8 +248,6 @@ sigupButton.addEventListener('click', function (event) {
     if (userName !== "") {
         localStorage.setItem('userName', userName);
         //switch out for something ingame
-        alert(`Welcome ${userName}!`);
-        console.log("player " + localStorage.getItem('userName'));
         document.getElementById("begin").style.display = "";
         document.getElementById("signup").style.display = "none";
     } else {
@@ -265,6 +263,7 @@ function startGame() {
     document.getElementById('signup-space').style.display = 'none';
     document.getElementById('badge-space').style.display = 'inline-block';
     document.getElementById('answer-space').style.display = 'inline-block';
+    document.getElementById('username-display').innerHTML = "Player " + localStorage.getItem('userName');
     getQuestion();
 }
 
@@ -301,6 +300,7 @@ function resetQuiz() {
 // load next question filtered by ID
 function getQuestion(question) {
     document.getElementById("next").style.display = "none";
+    document.getElementsByClassName("answer-btn").classList.remove("correct", "incorrect"); 
     // set max questions
     if (usedQuestionIds.length < 10) {
         questionNumber++;
@@ -323,6 +323,7 @@ function getQuestion(question) {
         document.getElementById("answer-space").style.display = "none";
         document.getElementById("playAgainBtn").style.display = "inline";
     }
+    document.getElementById("answer-space").classList.remove("correct", "incorrect");
 }
 
 // check answer to current question
