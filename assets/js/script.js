@@ -97,7 +97,7 @@ var questions = [{
         question: "assets/images/badges/hashtag-question.webp",
         optionA: "Hashtag United",
         optionB: "Influencers United",
-        optionC: "The Team Formerly Known As Twitter United",
+        optionC: "X United",
         correctOption: "Hashtag United",
         correctImage: "assets/images/badges/hashtag-answer.webp"
     },
@@ -325,9 +325,9 @@ function getQuestion(question) {
         console.log(usedQuestionIds);
         console.log(currentQuestion);
     } else {
-        alert("Game Over! Thank you for playing.");
         document.getElementById("answer-space").style.display = "none";
         document.getElementById("playAgainBtn").style.display = "inline";
+        calculateScore();
     }
 }
 
@@ -367,5 +367,6 @@ function checkAnswer(event) {
 
 // calculate final score
 function calculateScore() {
-
+    document.getElementById("result-space").style.display = "inline";
+    document.getElementById("thanks").innerHTML = "Thank you for playing!";
 }
