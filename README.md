@@ -39,15 +39,22 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
     * When calling a new question, the next question function strips the answer buttons of their association with the correct/incorrect CSS classes to reset the answer space to default view.
     * The game is configured for 10 rounds, after which the game finishes and the score is displayed.
 
-* __Final Score__
-    * 
+* __Game Over__
+    * Once the game has reached its 10th question, a play again button is made visible, with which the user can use the same reset game function mentioned earlier to start the game again and attempt to beat their high scores.
 
 
 ## Testing
 
-## Validators
+### Validators
 
+HTML
+* No HTML errors returned from the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Falbaxiii.github.io%2Fthegood-thebadge-theugly%2F).
 
+CSS
+* No CSS errors returned from the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/).
+
+JavaScript
+* NO major errors flagged in [JShint](https://jshint.com/).
 
 ## Functional Testing
 
@@ -55,7 +62,14 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 ### Development
 
+* When working with as many image elements as this project needed, the first issue encountered during the development cycle was how to initialise them in an accessible way. I initially attempted to declare each image (2 x for every question) as single variables (new Images) and then push all of them to a single image array, from where I could call them whenever.
 
+For example;
+        
+        Let AlloaQuestion = new Image();
+        alloaQuestion.src = "assets\images\badges\alloa-question.src"
+
+The problem that came up using this method was the code quickly became very unwieldy and hard to read. The solution I decided to use was to keep an image element in the HTML with placeholder text in the .src path, and then instead of calling a seperate variable for the question/answer keys in the questions array, have the relative src file path as a string targetting the v
 
 ### Unfixed Bugs
 
