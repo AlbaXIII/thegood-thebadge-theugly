@@ -292,7 +292,7 @@ function getRandomQuestion() {
 function resetQuiz() {
     usedQuestionIds = [];
     questionNumber = 0;
-    playerscore = 0;
+    playerScore = 0;
     wrongAttempts = 0;
     document.getElementById("playAgainBtn").style.display = "none";
     startGame();
@@ -318,6 +318,7 @@ function getQuestion(question) {
         usedQuestionIds.push(currentQuestion.questionId);
         document.getElementById("question-number").innerHTML = questionNumber;
         document.getElementById("player-score").innerHTML = playerScore;
+        document.getElementById("wrong-attempts").innerHTML = wrongAttempts;
         document.getElementById("question-badge").src = currentQuestion.question;
         document.getElementById("answer1").innerHTML = currentQuestion.optionA;
         document.getElementById("answer2").innerHTML = currentQuestion.optionB;
