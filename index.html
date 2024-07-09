@@ -26,74 +26,76 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <h1 class="header">The Good, the Badge and the Ugly</h1>
-    <h2 id="subheader">Can you match the weird badge to the club?</h2>
+    <main>
+        <!-- Header -->
+        <h1 class="header">The Good, the Badge and the Ugly</h1>
+        <h2 id="subheader">Can you match the weird badge to the club?</h2>
 
-    <!-- Game space & background -->
-    <div class="game-space">
-        <!-- create locally stored username -->
-        <div id="signup-space">
-            <h2>Create a username to begin!</h2>
-            <i class="fa-solid fa-user"></i>
-            <input id="username-input" type="text" required>
+        <!-- Game space & background -->
+        <div class="game-space">
+            <!-- create locally stored username -->
+            <div id="signup-space">
+                <h2>Create a username to begin!</h2>
+                <i class="fa-solid fa-user"></i>
+                <input id="username-input" type="text" required>
+
+                <br class="break">
+
+                <input type="submit" id="signup" value="Create Username">
+                <!-- run start game script on begin input eventlistener -->
+                <br class="break">
+                <label for="begin"></label>
+                <input type="submit" id="begin" style="display: none;" value="Begin!">
+            </div>
 
             <br class="break">
 
-            <input type="submit" id="signup" value="Create Username">
-            <!-- run start game script on begin input eventlistener -->
-            <br class="break">
-            <label for="begin"></label>
-            <input type="submit" id="begin" style="display: none;" value="Begin!">
-        </div>
-
-        <br class="break">
-
-        <!-- display stored username above gamespace -->
-        <div>
-            <h2 id="username-display">Player</h2>
-        </div>
-
-        <br>
-
-        <!-- Badge space for questions -->
-        <div id="badge-space">
-            <div id="badge">
-                <img id="question-badge" src="placeholder-text" alt="A football club badge of interesting design">
-                <div id="question-placeholder"></div>
+            <!-- display stored username above gamespace -->
+            <div>
+                <h2 id="username-display">Player</h2>
             </div>
-            <!-- score display -->
-            <h3>Score : <span id="player-score">0</span> / 10</h3>
-            <h3>Wrong : <span id="wrong-attempts">0</span></h3>
-            <h3> Question : <span id="question-number">1</span> / 10</h3>
-            <!-- Progress bar 1/5 -->
-            <progress class="progress" max="100" value="10"></progress>
-            <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
-        </div>
 
-        <br>
-
-        <!-- Answer space for answer buttons -->
-        <div id="answer-space">
-            <!-- answer options values 1 to 3 -->
-            <div id="answer-input">
-                <button id="answer1" class="answer-btn" onclick="checkAnswer(event)">answer1</button>
-                <button id="answer2" class="answer-btn" onclick="checkAnswer(event)">answer2</button>
-                <button id="answer3" class="answer-btn" onclick="checkAnswer(event)">answer3</button>
-            </div>
-            <!-- next question button -->
-            <div class="next-button-container">
-                <button id="next" onclick="getQuestion()">Next Question</button>
-            </div>
-            <!-- reset button to break game early or reset -->
-            <button id="reset" onclick="resetQuiz()">Start Over</button>
-        </div>
-        <!-- message for end of quiz -->
-        <div id="result-space" style="display:none;">
-            <h2 id="thanks">Thank you for playing!</h2>
             <br>
+
+            <!-- Badge space for questions -->
+            <div id="badge-space">
+                <div id="badge">
+                    <img id="question-badge" src="placeholder-text" alt="A football club badge of interesting design">
+                    <div id="question-placeholder"></div>
+                </div>
+                <!-- score display -->
+                <h3>Score : <span id="player-score">0</span> / 10</h3>
+                <h3>Wrong : <span id="wrong-attempts">0</span></h3>
+                <h3> Question : <span id="question-number">1</span> / 10</h3>
+                <!-- Progress bar 1/5 -->
+                <progress class="progress" max="100" value="10"></progress>
+                <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
+            </div>
+
+            <br>
+
+            <!-- Answer space for answer buttons -->
+            <div id="answer-space">
+                <!-- answer options values 1 to 3 -->
+                <div id="answer-input">
+                    <button id="answer1" class="answer-btn" onclick="checkAnswer(event)">answer1</button>
+                    <button id="answer2" class="answer-btn" onclick="checkAnswer(event)">answer2</button>
+                    <button id="answer3" class="answer-btn" onclick="checkAnswer(event)">answer3</button>
+                </div>
+                <!-- next question button -->
+                <div class="next-button-container">
+                    <button id="next" onclick="getQuestion()">Next Question</button>
+                </div>
+                <!-- reset button to break game early or reset -->
+                <button id="reset" onclick="resetQuiz()">Start Over</button>
+            </div>
+            <!-- message for end of quiz -->
+            <div id="result-space" style="display:none;">
+                <h2 id="thanks">Thank you for playing!</h2>
+                <br>
+            </div>
         </div>
-    </div>
+    </main>
     <!-- Javascript link -->
     <script src="assets/js/script.js"></script>
 </body>
