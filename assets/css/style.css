@@ -34,7 +34,7 @@ body {
     background-color: rgba(172, 230, 185, 0.7);
     box-sizing: border-box;
     width: 85%;
-    height: 90vh;
+    height: 96vh;
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
@@ -178,13 +178,6 @@ input {
         padding: 150px;
         }
 
-    #game-space {
-    }
-    
-    #badge-space {
-
-    }
-
     #answer-input {
         float: right;
         display: flex;
@@ -219,7 +212,8 @@ input {
         }
 
     #game-space {
-
+        width: 85%;
+        max-height: 95%;
     }
     
     #answer-input {
@@ -229,18 +223,20 @@ input {
         padding: 50px;
     }
 
-    #answer-input button {
-        margin-bottom: 50px;
+    .answer-btn {
+        margin-bottom: 25x;
         margin-left: 50px;
+        margin-right: 50px;
         font-size: 1.4rem;
     }
-    
-    .answer-btn {
 
+    #next {
+        font-size: 1.3rem;
     }
 
     #reset {
         margin-left: 50px;
+        font-size: 1.3rem;
     }
 }
     
