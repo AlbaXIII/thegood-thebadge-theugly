@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Graduate&family=Train+One&display=swap');
     </style>
     <script src="https://kit.fontawesome.com/c1bedcdbe6.js" crossorigin="anonymous"></script>
-    
+
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
-    
+
     <!-- css link -->
     <link rel="stylesheet" href="assets/css/style.css">
     <title>The Good, the Badge and the Ugly</title>
@@ -30,7 +31,7 @@
     <div class="game-space">
         <!-- create locally stored username -->
         <div id="signup-space">
-             <h2>Create a username to begin!</h2>
+            <h2>Create a username to begin!</h2>
             <i class="fa-solid fa-user"></i>
             <input id="username-input" type="text" required>
 
@@ -57,10 +58,11 @@
                 <img id="question-badge" src="placeholder-text" alt="A football club badge of interesting design">
                 <div id="question-placeholder"></div>
             </div>
-            <!-- Progress bar 1/5 -->
+            <!-- score display -->
             <h3>Score : <span id="player-score">0</span> / 10</h3>
             <h3>Wrong : <span id="wrong-attempts">0</span></h3>
             <h3> Question : <span id="question-number">1</span> / 10</h3>
+            <!-- Progress bar 1/5 -->
             <progress class="progress" max="100" value="10"></progress>
             <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
         </div>
@@ -74,7 +76,7 @@
                 <button id="answer1" class="answer-btn" onclick="checkAnswer(event)">answer1</button>
                 <button id="answer2" class="answer-btn" onclick="checkAnswer(event)">answer2</button>
                 <button id="answer3" class="answer-btn" onclick="checkAnswer(event)">answer3</button>
-            </div> 
+            </div>
             <!-- next question button -->
             <div class="next-button-container">
                 <button id="next" onclick="getQuestion()">Next Question</button>
@@ -82,7 +84,7 @@
             <!-- reset button to break game early or reset -->
             <button id="reset" onclick="resetQuiz()">Start Over</button>
         </div>
-
+        <!-- message for end of quiz -->
         <div id="result-space" style="display:none;">
             <h2 id="thanks"></h2>
             <br>
@@ -92,4 +94,5 @@
     <!-- Javascript link -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
