@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {});
 
 //questions with image src paths
-var questions = [{
+const questions = [{
         questionId: 1,
         question: "assets/images/badges/alloa-question.webp",
         optionA: "Alloa Athletic",
@@ -239,14 +239,14 @@ var questions = [{
 ]
 
 // script to create and store local username
-const sigupButton = document.getElementById('signup');
+const sigupButton = document.getElementById("signup");
 
-sigupButton.addEventListener('click', function (event) {
+sigupButton.addEventListener("click", function (event) {
     event.preventDefault();
-    let userName = document.getElementById('username-input').value;
+    let userName = document.getElementById("username-input").value;
 
     if (userName !== "") {
-        localStorage.setItem('userName', userName);
+        localStorage.setItem("userName", userName);
         //switch out for something ingame
         document.getElementById("begin").style.display = "";
         document.getElementById("signup").style.display = "none";
@@ -260,24 +260,23 @@ function startGame() {
     let gameStart = "starting game...";
     console.log(gameStart);
     // hide username input and show game space
-    document.getElementById('signup-space').style.display = 'none';
-    document.getElementById("result-space").style.display = 'none';
-    document.getElementById('badge-space').style.display = 'inline-block';
-    document.getElementById('answer-space').style.display = 'inline-block';
-    document.getElementById('username-display').innerHTML = "Player " + localStorage.getItem('userName');
+    document.getElementById("signup-space").style.display = "none";
+    document.getElementById("result-space").style.display = "none";
+    document.getElementById("badge-space").style.display = "inline-block";
+    document.getElementById("answer-space").style.display = "inline-block";
+    document.getElementById("username-display").innerHTML = "Player " + localStorage.getItem('userName');
     getQuestion();
 }
 
 // start game on begin button input
-begin.addEventListener('click', function (event) {
+begin.addEventListener("click", function (event) {
     event.preventDefault();
     startGame();
 });
 
-let questionNumber = 0 //holds the current question number
-let playerScore = 0 //holds the player score
-let wrongAttempts = 0 //amount of wrong answers picked by player
-let indexNumber = 0 //will be used in displaying next question
+let questionNumber = 0; //holds the current question number
+let playerScore = 0; //holds the player score
+let wrongAttempts = 0; //amount of wrong answers picked by player
 let usedQuestionIds = []; //store used question IDs to avoid repeating same question image
 let currentQuestion;
 
@@ -299,7 +298,7 @@ function resetQuiz() {
 }
 
 // load next question filtered by ID
-function getQuestion(question) {
+function getQuestion() {
     // hide next button till user input
     document.getElementById("next").style.display = "none";
     // remove answer style class and enable answer buttons
@@ -312,7 +311,7 @@ function getQuestion(question) {
     // set max questions
     if (usedQuestionIds.length < 10) {
         questionNumber++;
-        document.querySelector('.progress').value = questionNumber + "0";
+        document.querySelector(".progress").value = questionNumber + "0";
         // send relevant question information to DOM by targeted elements
         currentQuestion = getRandomQuestion();
         usedQuestionIds.push(currentQuestion.questionId);
@@ -369,6 +368,6 @@ function checkAnswer(event) {
 
 // calculate final score
 function calculateScore() {
-    document.getElementById("result-space").style.display = 'inline';
+    document.getElementById("result-space").style.display = "inline";
     document.getElementById("thanks").innerHTML = "Thank you for playing!";
 }
