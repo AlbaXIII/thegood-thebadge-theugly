@@ -31,12 +31,12 @@ var questions = [{
     },
     {
         questionId: 4,
-        question: "assets/images/badges/burton-athletic.webp",
+        question: "assets/images/badges/burton-albion.webp",
         optionA: "Carling City",
         optionB: "Weatherspoon Wanderers",
         optionC: "Burton Albion",
         correctOption: "Burton Albion",
-        correctImage: "assets/images/badges/burton-athletic.webp"
+        correctImage: "assets/images/badges/burton-albion.webp"
     },
     {
         questionId: 5,
@@ -261,6 +261,7 @@ function startGame() {
     console.log(gameStart);
     // hide username input and show game space
     document.getElementById('signup-space').style.display = 'none';
+    document.getElementById("result-space").style.display = 'none';
     document.getElementById('badge-space').style.display = 'inline-block';
     document.getElementById('answer-space').style.display = 'inline-block';
     document.getElementById('username-display').innerHTML = "Player " + localStorage.getItem('userName');
@@ -367,6 +368,6 @@ function checkAnswer(event) {
 
 // calculate final score
 function calculateScore() {
-    document.getElementById("result-space").style.display = "inline";
+    document.getElementById("result-space").style.display = 'inline';
     document.getElementById("thanks").innerHTML = "Thank you for playing!";
 }
