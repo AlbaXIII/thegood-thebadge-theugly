@@ -135,7 +135,7 @@ var questions = [{
         optionB: "Boston Crimson Gremlins",
         optionC: "Grimsby Scarlet Devils",
         correctOption: "Lincoln Red Imps",
-        correctImage: "assets/images/badges/limon-answer.webp"
+        correctImage: "assets/images/badges/lincoln-red-imps.webp"
     },
     {
         questionId: 16,

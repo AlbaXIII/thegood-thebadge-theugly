@@ -47,10 +47,20 @@ body {
     color: #333;
 }
 
+#username-input {
+    font-size: 1.2rem;
+    border: 2px solid #333;
+}
+
+#signup {
+    font-size: 1.2rem;
+    border: 2px solid #333;
+}
+
 #begin {
     font-family: "Graduate", sans-serif;
     background-color: white;
-    border: 2px solid #04AA6D;
+    border: 2px solid #333;
     color: #333;
     text-align: center;
     font-size: 2rem;
