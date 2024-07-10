@@ -6,6 +6,8 @@ Whilst thinking about a project idea to submit for Assignment 2, I stumbled upon
 
 With that in mind, the design philosophy would be to create a intiutive, clean and most of all enjoyable quiz with an clear scoring system and an ability to choose a username and record a high score.
 
+![series of responsive screenshots](readme-images/responsive-screenshot.png)
+
 ## Features
 
 * __Background__
@@ -17,19 +19,28 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
     * Furthermore the lack of an overabundance of text allows the user to quickly comprehend the rules of the game and then being able to jump straight into playing.
     * The font sizes used are calculated in rem to ensure reactivity to all screen sizes.
 
+    ![Quiz game space](readme-images/game-space.png)
+
 * __Game Space__
     * The primary design choice for the quiz was to make sure that all of the quiz' elements are contained with in one centralised div known as the 'game-space'. The design for this is using a strong solid white boundry with a low-opacity green background, meant to resemble a football pitch to keep with the theme of the site.
     * With reactivity in mind, the game-space is fully responsive for all devices, with media queries implemented for tablet and desktop screen sizes to ensure that the rectangular shape stays cohesive and the headers do not get lost in the background material on larger screens.
+
+    ![username space](readme-images/username-space.png)
 
 * __Username__
     * When intially navigating to the site, there is a username input box presented as validation for the user to begin playing. Through use of Javascript and local storage, the game will not begin until the username is defined by the user, wherein the chosen username is displayed above the game space during play.
     * After filling in their username, the username signup area is hidden immediately after completion of the name submission in order to maintain the consistent flow of information to the game space, and the begin game button comes into view, styled with large lettering to show a clear call to action.
     * The signup function has a validation if validator built in to stop users from starting the game without inputting any text, which triggers an alert.
 
+    ![username validation](readme-images/username-validation.png)
+
 * __Question Space__
     * Once the user has defined their username, the quiz can begin on and eventlistener paired to the begin button.
     * The signup space divisions are hidden by the startQuiz function and the XXXXX
     * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game is begun, the next question function picks out a question at random and targets the relevant images in the DOM with their specific strings. So for example below, XXX
+
+    ![badge space](readme-images/badge-space.png)
+
     * On the top of the screen (left hand side on tablet screens and larger), the question badge is displayed - this is the clue for the user to guess from. I attempted to find the most unusual badges for the quiz to provide the greatest challenge to the user. 
     * Beneath the badge are the quiz metrics - the current question number, current score and wrong answer count. These react to the quiz questions called and will reset to zero upon input of the start over button. Also present is a progress bar, which also reacts to the question number and fills up as the quiz goes on, bringing some extra user feedback to the space and create a more dynamic feel to the process.
 
@@ -76,8 +87,12 @@ No significant differences in functionality were shown between browsers.
 HTML
 * No HTML errors returned from the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Falbaxiii.github.io%2Fthegood-thebadge-theugly%2F).
 
+![HTML validator](readme-images/html-validator.PNG)
+
 CSS
 * No CSS errors returned from the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/).
+
+![CSS validator](readme-images/css-validator.PNG)
 
 JavaScript
 * NO major errors flagged in [JShint](https://jshint.com/).
