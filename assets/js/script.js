@@ -264,6 +264,7 @@ function startGame() {
     document.getElementById("result-space").style.display = "none";
     document.getElementById("badge-space").style.display = "inline-block";
     document.getElementById("answer-space").style.display = "inline-block";
+    document.getElementById("username-display").style.display = "inline-block";
     document.getElementById("username-display").innerHTML = "Player " + localStorage.getItem('userName');
     getQuestion();
 }
