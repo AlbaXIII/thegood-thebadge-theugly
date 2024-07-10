@@ -173,6 +173,20 @@ input {
     font-size: 1rem;
     margin-top: 10px;
 }
+
+#not-found-header {
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    color: white;
+}
+
+#not-found-subheader {
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: white;
+}
     
 /* media queries for general responsivity */
 
