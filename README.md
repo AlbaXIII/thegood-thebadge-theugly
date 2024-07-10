@@ -28,22 +28,48 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 * __Question Space__
     * Once the user has defined their username, the quiz can begin on and eventlistener paired to the begin button.
-    * The signup space divisions are hidden and the 
+    * The signup space divisions are hidden by the startQuiz function and the XXXXX
     * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game is begun, the next question function picks out a question at random and targets the relevant images in the DOM with their specific strings. So for example below, XXX
     * On the top of the screen (left hand side on tablet screens and larger), the question badge is displayed - this is the clue for the user to guess from. I attempted to find the most unusual badges for the quiz to provide the greatest challenge to the user. 
-    * Beneath the badge are the quiz metrics - the current question number, current score and wrong answer count. These react to the quiz questions called and will reset to zero upon input of the start over button.
+    * Beneath the badge are the quiz metrics - the current question number, current score and wrong answer count. These react to the quiz questions called and will reset to zero upon input of the start over button. Also present is a progress bar, which also reacts to the question number and fills up as the quiz goes on, bringing some extra user feedback to the space and create a more dynamic feel to the process.
 
 * __Answer Space__
-    * The answer space consists of the three mutliple choice buttons, all calling the check answer function as an event listener to XX.
-    * Once an answer is selected, the check answer function is called and XXX. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not.
+    * The answer space consists of the three mutliple choice buttons, all calling the check answer function as an event listener to each of the answer buttons. The buttons themselves are styled with a clean bold border to draw the users eye and interact with the checkAnswer function so when they do change colour when the answer is checked, it has a very understandable effect for the user.
+    * Once an answer is selected, the check answer function is called and function detects is the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not.
     * When calling a new question, the next question function strips the answer buttons of their association with the correct/incorrect CSS classes to reset the answer space to default view.
+    * With regards to design, the answer buttons are arranged in a column, in order to keep the game space compact and maximise visual clarity for the player.
+    * After an answer input is detected, the answer buttons are then disabled in order to stop any further input from the user - the buttons are then re-enabled every time a new question is called from getQuestion.
     * The game is configured for 10 rounds, after which the game finishes and the score is displayed.
 
 * __Game Over__
     * Once the game has reached its 10th question, a play again button is made visible, with which the user can use the same reset game function mentioned earlier to start the game again and attempt to beat their high scores.
 
+* __404 Page__
+    * XXXXXX
+
 
 ## Testing
+
+This project was designed prominantly for mobile screens before using media queries to apply reactivity to the game space. The initial screen during the design phase was the Saamsung Galaxy Z Fold 5. Testing was also completed on the following screen sizes;
+
+* iPhone 12 Pro (390x844)
+* Google Pixel 7, Samsung Galazy S20 Ultra (412x915)
+* iPhone XR (414x896)
+* iPhone 14 Pro Max (430x932)
+* iPad Mini (768x1024)
+* iPad Air (820x1180)
+* iPad Pro (1024x1366)
+* Desktop (1920x1080)
+
+Throughout development of the project, I used [Google Chrome developer tools](https://developer.chrome.com/docs/devtools) to monitor the site output and to interact with the console.
+
+The quiz was created using Google Chrome, but has also been tested on;
+
+* Mozilla Firefox
+* Safari
+* Opera
+
+No significant differences in functionality were shown between browsers.
 
 ### Validators
 
@@ -58,6 +84,8 @@ JavaScript
 
 ## Functional Testing
 
+INSERT DOC HERE
+
 ## Bugs and Issues
 
 ### Development
@@ -69,8 +97,30 @@ For example;
         Let AlloaQuestion = new Image();
         alloaQuestion.src = "assets\images\badges\alloa-question.src"
 
-The problem that came up using this method was the code quickly became very unwieldy and hard to read. The solution I decided to use was to keep an image element in the HTML with placeholder text in the .src path, and then instead of calling a seperate variable for the question/answer keys in the questions array, have the relative src file path as a string targetting the v
+The problem that came up using this method was the code quickly became very unwieldy and hard to read. The solution I decided to use was to keep an image element in the HTML with placeholder text in the .src path, and then instead of calling a seperate variable for the question/answer keys in the questions array, have the relative src file path as a string targetting the DOM img source element, which allowed me to keep the code relatively readable and compact.
 
+        {
+        questionId: 1,
+        question: "assets/images/badges/alloa-question.webp",
+        optionA: "Alloa Athletic",
+        optionB: "Beecraig Town",
+        optionC: "Hench Hornets FC",
+        correctOption: "Alloa Athletic",
+        correctImage: "assets/images/badges/alloa-answer.webp"
+    },
+
+* During the creation of the checkAnswer function, the reactivity I was aiming for on user input was to have the boundary surronding the correct answer be added to a specific .correct/.incorrect CSS class as a visual trigger to provide user feedback. Whilst this was simple to initially achieve for the single event target, in order to have the non-targeted button containing the correct answer react provided more of a headache. After a few solutions, I settled on expanding on the 'incorrect anwer' __if else__ block within the checkAnswer function after declaring the answer buttons as seperate variables above the function.
+
+        else {
+        if (answer1.innerText === currentQuestion.correctOption) {
+            answer1.classList.add("correct");
+        } else if (answer2.innerText === currentQuestion.correctOption) {
+            answer2.classList.add("correct");
+        } else if (answer3.innerText === currentQuestion.correctOption) {
+            answer3.classList.add("correct");
+        };
+        event.target.classList.add("incorrect");
+  
 ### Unfixed Bugs
 
 ## Deployment
@@ -109,12 +159,13 @@ The live link is found through this address - __[https://albaxiii.github.io/theg
 ### Content
 
 * Game space structure loosely based on HTML & CSS provided in Code Institute's 'Love Maths'.
+* Quiz format inspired by [this article](https://www.fourfourtwo.com/gallery/ranked-17-weirdest-club-badges-football) in FourFourTwo magazine January 2018. 
 
 ### Media
 * All badges used are property of their respective clubs.
-* Favicon made from image sourced on Google Images and converted using Favicon.io.
-* PNG files converted to WEBP through CloudConvert.
-* Responsive screenshot from amiresponsive?.
+* Favicon made from image sourced on Google Images and converted using [Favicon.io](https://favicon.io/).
+* PNG files converted to WEBP through [CloudConvert](https://cloudconvert.com/).
+* Responsive screenshot from [amiresponsive?](ui.dev/amiresponsive).
 
 ### Personal
 * As always, thanks to my mentor Dick Vlaanderen for his advice and constructive input throughout.
