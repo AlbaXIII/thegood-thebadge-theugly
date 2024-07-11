@@ -220,6 +220,8 @@ input {
 }
 
 #not-found-header {
+    display: flex;
+    align-items: center;
     text-align: center;
     font-size: 1.8rem;
     letter-spacing: 4px;
@@ -227,6 +229,8 @@ input {
 }
 
 #not-found-subheader {
+    display: flex;
+    align-items: center;
     text-align: center;
     font-size: 1.4rem;
     letter-spacing: 3px;
