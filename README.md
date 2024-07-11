@@ -2,7 +2,7 @@
 
 The Good, the Badge and the Ugly is an interactive image quiz based on some of the more outlandish football club badges, implemented through HTML, CSS and JavaScript.
 
-Whilst thinking about a project idea to submit for Assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football, and I decided to try and create a quiz based around the idea that some of the designs are so obtuse that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledeable sport lovers.
+Whilst thinking about a project idea to submit for Assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football. This sparked an idea - and I decided to try and create a quiz based around the idea that some of the designs are so obtuse that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledeable sport lovers.
 
 With that in mind, the design philosophy would be to create a intiutive, clean and most of all enjoyable quiz with an clear scoring system and an ability to choose a username and record a high score.
 
@@ -12,10 +12,10 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 * __Background__
     * The intial design philosophy of the quiz was to use a single large background that immediatly communicates visually to the user the content of the site, and for this reason the background is a warm-contrasted image of a football pitch from above. 
-    * Whilst this was an obvious choice, the top-down angle gives an isometric feel to the website remeniscent of a tactical screen in order to give a flat surface for the game surface whilst being subliminally 
+    * Whilst this was an obvious choice, the top-down angle gives an isometric feel to the website remeniscent of a tactical screen in order to give a crisp look to the playing area and get the user into the mindset of the 'player'
 
 * __Header__
-    * At the head of the site above the game space are two headers, displaying the name of the site as well as the rules of the game. The font used is "XXXX", a font chosen for it's resemblance to retro football kit numbers to give the page an 'sporty' aesthetic, with solid white coloring to ehance this look.
+    * At the head of the site above the game space are two headers, displaying the name of the site as well as the rules of the game. The font used is __"Graduate"__, a font chosen for it's resemblance to retro football kit numbers to give the page an 'sporty' aesthetic, with solid white coloring to ehance this look.
     * Furthermore the lack of an overabundance of text allows the user to quickly comprehend the rules of the game and then being able to jump straight into playing.
     * The font sizes used are calculated in rem to ensure reactivity to all screen sizes.
 
@@ -36,8 +36,8 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 * __Question Space__
     * Once the user has defined their username, the quiz can begin on and eventlistener paired to the begin button.
-    * The signup space divisions are hidden by the startQuiz function and the XXXXX
-    * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game is begun, the next question function picks out a question at random and targets the relevant images in the DOM with their specific strings. So for example below, XXX
+    * The signup space division and begin button are then hidden by the startQuiz function and the main game space is brought into view as part of the same function.
+    * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game is begun, the next question function picks out a question at random and targets the relevant images in the DOM with their specific strings.
 
     ![badge space](readme-images/badge-space.png)
 
@@ -46,6 +46,9 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 * __Answer Space__
     * The answer space consists of the three mutliple choice buttons, all calling the check answer function as an event listener to each of the answer buttons. The buttons themselves are styled with a clean bold border to draw the users eye and interact with the checkAnswer function so when they do change colour when the answer is checked, it has a very understandable effect for the user.
+
+    ![game validation](readme-images/game-validation.png)
+
     * Once an answer is selected, the check answer function is called and function detects is the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not.
     * When calling a new question, the next question function strips the answer buttons of their association with the correct/incorrect CSS classes to reset the answer space to default view.
     * With regards to design, the answer buttons are arranged in a column, in order to keep the game space compact and maximise visual clarity for the player.
@@ -55,8 +58,10 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 * __Game Over__
     * Once the game has reached its 10th question, a play again button is made visible, with which the user can use the same reset game function mentioned earlier to start the game again and attempt to beat their high scores.
 
+    ![game over](readme-images/game-over.png)
+
 * __404 Page__
-    * XXXXXX
+    * Lastly, a custom 404 page has been prepared in the unlikely event the user cannot reach the correct page of the website. The page follows the same design philosophy of the index page, with a short message informing the viewer of the problem at hand and a hyperlink back to the homepage.
 
 
 ## Testing
