@@ -257,8 +257,6 @@ sigupButton.addEventListener("click", function (event) {
 
 // reveal game space
 function startGame() {
-    let gameStart = "starting game...";
-    console.log(gameStart);
     // hide username input and show game space
     document.getElementById("signup-space").style.display = "none";
     document.getElementById("result-space").style.display = "none";
@@ -275,11 +273,11 @@ begin.addEventListener("click", function (event) {
     startGame();
 });
 
-let questionNumber = 0; //current question number
-let playerScore = 0; //current player school
-let wrongAttempts = 0; //amount of wrong answers picked by player
-let usedQuestionIds = []; //store used question IDs to avoid repeating same question image
-let currentQuestion;
+let questionNumber = 0; // current question number
+let playerScore = 0; // current player school
+let wrongAttempts = 0; // amount of wrong answers picked by player
+let usedQuestionIds = []; // store used question IDs to avoid repeating same question image
+let currentQuestion; // declare current question 
 
 // pull random question from question array filtered by question IDs
 function getRandomQuestion() {
@@ -323,9 +321,6 @@ function getQuestion() {
         document.getElementById("answer1").innerHTML = currentQuestion.optionA;
         document.getElementById("answer2").innerHTML = currentQuestion.optionB;
         document.getElementById("answer3").innerHTML = currentQuestion.optionC;
-        // log used questions to the console
-        console.log(usedQuestionIds);
-        console.log(currentQuestion);
     } else {
         document.getElementById("answer-space").style.display = "none";
         document.getElementById("play-again-btn").style.display = "inline";
@@ -340,10 +335,8 @@ let answer3 = document.getElementById("answer3");
 
 // check answer to current question
 function checkAnswer(event) {
-    console.log(event.target.innerText);
     // add correct answers to correct css class
     if (event.target.innerText === currentQuestion.correctOption) {
-        console.log("Correct ", currentQuestion.correctOption),
         event.target.classList.add("correct");
         playerScore++;
         document.getElementById("question-badge").src = currentQuestion.correctImage;
