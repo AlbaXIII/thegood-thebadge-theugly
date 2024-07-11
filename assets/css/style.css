@@ -41,7 +41,7 @@ body {
     border: 5px solid #fff;
 }
 
-/* signup area for username */
+/* signup area for username & begin button */
 
 #signup-space {
     font-family: "Graduate", sans-serif;
@@ -70,18 +70,13 @@ body {
     display: none;
 }
 
-/* badge-space heading area */
+/* badge-space area */
 
 #badge-space {
     max-width: 200px;
     max-height: 200px;
     margin: auto;
     display: none;
-}
-    
-#answer-space {
-    display:none;
-    flex-direction: column;
 }
 
 #username-display{
@@ -93,16 +88,20 @@ h3 {
     color: #333;
 }
 
+/* answer button column style */
+
+#answer-space {
+    display:none;
+    flex-direction: column;
+}
+
 #answer-input {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#badge-space {
-    margin-left: 75px;
-    margin-right: 50px;
-}
+/* question metrics */
 
 #badge-space h3 {
     margin-top: 5px;
@@ -169,6 +168,8 @@ h3 {
     padding: 2px;
 }
 
+/* hidden play again button */
+
 #play-again-btn {
     font-family: "Graduate", sans-serif;
     background-color: #04AA6D;
@@ -181,18 +182,6 @@ h3 {
     display: none;
 }
     
-#badge-space {
-    max-width: 200px;
-    max-height: 200px;
-    margin: auto;
-    display: none;
-}
-    
-#answer-space {
-    display:none;
-    flex-direction: column;
-}
-
 /* general style for input elements */
 
 input {
