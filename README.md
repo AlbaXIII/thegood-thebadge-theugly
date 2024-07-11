@@ -51,7 +51,11 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
     ![game validation](readme-images/game-validation.png)
 
-    * Once an answer is selected, the check answer function detects if  the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not using addClassList and CSS classes.
+    * Once an answer is selected, the check answer function detects if  the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not using addClassList and CSS classes. The image is also swapped out (where appropriate) for the correct image with the name of the club revealed, see example below.
+
+    ![correct badge](readme-images/correct-badge.PNG)
+
+    * NB this is not the case with every badge - for example the cyrillic language badges - as revealing the name would not reinforce any new information to the user if they are unable to read the contents.
     * When calling a new question, the next question function strips the answer buttons of their association with the correct/incorrect CSS classes to reset the answer space to default view.
     * With regards to design, the answer buttons are arranged in a column, in order to keep the game space compact and maximise visual clarity for the player.
     * After an answer input is detected, the answer buttons are then disabled in order to stop any further input from the user - the buttons are then re-enabled every time a new question is called from getQuestion.
@@ -198,6 +202,7 @@ The live link is found through this address - __[https://albaxiii.github.io/theg
 
 ### Media
 * All badges used are property of their respective clubs.
+* Background provided by [Pexels](https://www.pexels.com/).
 * Favicon made from image sourced on Google Images and converted using [Favicon.io](https://favicon.io/).
 * PNG files converted to WEBP through [CloudConvert](https://cloudconvert.com/).
 * Responsive screenshot from [amiresponsive?](ui.dev/amiresponsive).
