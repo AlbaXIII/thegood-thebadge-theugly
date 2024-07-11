@@ -2,7 +2,7 @@
 
 The Good, the Badge and the Ugly is an interactive image quiz based on some of the more outlandish football club badges, implemented through HTML, CSS and JavaScript.
 
-Whilst thinking about a project idea to submit for Assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football. This sparked an idea - and I decided to try and create a quiz based around the idea that some of the designs are so obtuse that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledeable sport lovers.
+Whilst thinking about a project idea to submit for Assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football. This sparked an idea - and I decided to try and create a quiz based around the idea that some of the designs are so bizarre that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledeable sport lovers.
 
 With that in mind, the design philosophy would be to create a intiutive, clean and most of all enjoyable quiz with an clear scoring system and an ability to choose a username and record a high score.
 
@@ -11,30 +11,33 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 ## Features
 
 * __Background__
-    * The intial design philosophy of the quiz was to use a single large background that immediatly communicates visually to the user the content of the site, and for this reason the background is a warm-contrasted image of a football pitch from above. 
-    * Whilst this was an obvious choice, the top-down angle gives an isometric feel to the website remeniscent of a tactical screen in order to give a crisp look to the playing area and get the user into the mindset of the 'player'
+    * The intial design philosophy of the quiz was to use a single large background that immediately communicates visually to the user the theme of the site, and for this reason the background is a warm-contrasted image of a football pitch from above. 
+    * Whilst this was an obvious choice, the top-down angle gives an isometric feel to the website remeniscent of a tactical screen in order to give a crisp look to the playing area and get the user into the mindset of the 'player'.
 
 * __Header__
     * At the head of the site above the game space are two headers, displaying the name of the site as well as the rules of the game. The font used is __"Graduate"__, a font chosen for it's resemblance to retro football kit numbers to give the page an 'sporty' aesthetic, with solid white coloring to ehance this look.
     * Furthermore the lack of an overabundance of text allows the user to quickly comprehend the rules of the game and then being able to jump straight into playing.
     * The font sizes used are calculated in rem to ensure reactivity to all screen sizes.
 
-    ![Quiz game space](readme-images/game-space.png)
+    ![username space](readme-images/username-space.png)
 
 * __Game Space__
     * The primary design choice for the quiz was to make sure that all of the quiz' elements are contained with in one centralised div known as the 'game-space'. The design for this is using a strong solid white boundry with a low-opacity green background, meant to resemble a football pitch to keep with the theme of the site.
     * With reactivity in mind, the game-space is fully responsive for all devices, with media queries implemented for tablet and desktop screen sizes to ensure that the rectangular shape stays cohesive and the headers do not get lost in the background material on larger screens.
 
-    ![username space](readme-images/username-space.png)
+    ![username filled](readme-images/username-fill.png)
 
 * __Username__
     * When intially navigating to the site, there is a username input box presented as validation for the user to begin playing. Through use of Javascript and local storage, the game will not begin until the username is defined by the user, wherein the chosen username is displayed above the game space during play.
-    * After filling in their username, the username signup area is hidden immediately after completion of the name submission in order to maintain the consistent flow of information to the game space, and the begin game button comes into view, styled with large lettering to show a clear call to action.
-    * The signup function has a validation if validator built in to stop users from starting the game without inputting any text, which triggers an alert.
 
     ![username validation](readme-images/username-validation.png)
 
-* __Question Space__
+    * After filling in their username, the username signup area is hidden immediately after completion of the name submission in order to maintain the consistent flow of information to the game space, and the begin game button comes into view, styled with large lettering to show a clear call to action.
+    * The signup function has a validation if validator built in to stop users from starting the game without inputting any text, which triggers an alert.
+
+    ![game space](readme-images/game-space.png)
+
+* __Game Space__
     * Once the user has defined their username, the quiz can begin on and eventlistener paired to the begin button.
     * The signup space division and begin button are then hidden by the startQuiz function and the main game space is brought into view as part of the same function.
     * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game is begun, the next question function picks out a question at random and targets the relevant images in the DOM with their specific strings.
@@ -104,7 +107,7 @@ JavaScript
 
 ## Functional Testing
 
-INSERT DOC HERE
+![functional testing table](readme-images/cip2-functional-testing.webp)
 
 ## Bugs and Issues
 
