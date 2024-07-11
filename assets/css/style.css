@@ -220,6 +220,10 @@ input {
     top: 50%;
 }
 
+#not-found-div > a {
+    text-decoration: none;
+}
+
 #not-found-header {
     align-items: center;
     text-align: center;
