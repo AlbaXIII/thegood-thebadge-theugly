@@ -2,7 +2,7 @@
 
 The Good, the Badge and the Ugly is an interactive image quiz based on some of the more outlandish football club badges, implemented through HTML, CSS and JavaScript.
 
-Whilst thinking about a project idea to submit for assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football. This sparked an idea - and I decided to try and create a quiz based around the idea that some of the designs are so bizarre that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from TV shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledeable football lovers.
+Whilst thinking about a project idea to submit for assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football. This sparked an idea - and I decided to try and create a quiz based around the notion that some of the designs are so bizarre that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from TV shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledgeable football lovers.
 
 With that in mind, the design philosophy would be to create a intiutive, clean and most of all enjoyable quiz with an clear scoring system and an ability to choose a username and record scores.
 
@@ -11,7 +11,7 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 ## Features
 
 * __Background__
-    * The intial design philosophy of the quiz was to use a single large background that immediately communicates visually to the user the theme of the site, and for this reason the background is a warm-contrasted image of a football pitch from above. 
+    * The intial design philosophy of the quiz was to use a single large background that immediately communicates visually to the user the theme of the site, and for this reason the background is a warm-contrasted birds-eye image of a football pitch. 
     * Whilst this was an obvious choice, the top-down angle gives an isometric feel to the website reminiscent of a tactical screen in order to give a crisp look to the playing area and get the user into the mindset of the 'player'.
 
 * __Header__
@@ -22,8 +22,8 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
     ![username space](readme-images/username-space.png)
 
 * __Game Space__
-    * The primary design choice for the quiz was to make sure that all of the quiz' elements are contained with in one centralised div known as the 'game-space'. The design for this is using a strong solid white boundry with a low-opacity green background, meant to resemble a football pitch to keep with the theme of the site.
-    * With reactivity in mind, the game-space is fully responsive for all devices, with media queries implemented for tablet and desktop screen sizes to ensure that the rectangular shape stays cohesive and the headers do not get lost in the background material on larger screens.
+    * The primary design choice for the quiz was to make sure that all of its elements are contained within one centralised div known as the 'game-space'. The design for this uses a strong solid white border with a low-opacity green background, meant to resemble another football pitch to keep with the theme of the site.
+    * With reactivity in mind, the game-space is fully responsive for all devices, with media queries implemented for tablet and desktop screen sizes to ensure that the rectangular shape stays cohesive and the headers do not get lost in the background on larger screens.
 
     ![username filled](readme-images/username-fill.png)
 
@@ -39,28 +39,28 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 * __Game Space__
     * The signup space division and begin button are then hidden by the startQuiz function paired to the begin button, and the main game space is brought into view as part of the same function.
-    * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game begins, the next question function picks out a question at random and targets the relevant elements in the DOM with their specific strings.
+    * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. The questions have then been shuffled and filtered through a getRandomQuestion function to avoid repeated questions. When the game begins, the getQuestion function picks out a question at random and targets the relevant elements in the DOM with their specific strings.
 
     ![badge space](readme-images/badge-space.png)
 
     * On the top of the screen, the question badge is displayed - this is the clue for the user to guess from. I attempted to find the most unusual badges to provide the greatest challenge to the user. 
-    * Beneath the badge are the quiz metrics - the current question number, current score and wrong answer count. These react to the quiz questions called and will reset to zero upon input of the start over button. Also present is a progress bar, which also reacts to the question number and fills up as the quiz goes on, bringing some extra user feedback to the space and create a more dynamic feel to the process.
+    * Beneath the badge are the quiz metrics - the current question number, current score and wrong answer count. These react to the quiz questions answered and will reset to zero upon input of the start over button. Also present is a progress bar, which also reacts to the question number and fills up as the quiz goes on, bringing some extra user feedback to the space and creating a more dynamic feel to the process.
 
 * __Answer Space__
-    * The answer space consists of the three mutliple choice buttons, all calling the check answer function as an event listener. The buttons themselves are styled with a clean bold border to draw the users eye and interact with the checkAnswer function so when they do change colour when the answer is checked, it has a very demonstrative effect for the user.
+    * The answer space consists of the three mutliple choice buttons, all calling the checkAnswer function as an event listener. The buttons themselves are styled with a clean bold dark grey border to draw the user's eye and interact with the checkAnswer function so when they do change colour when the answer is checked, it has a very demonstrative effect for the user.
 
     ![game validation](readme-images/game-validation.png)
 
-    * Once an answer is selected, the check answer function detects if  the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not using addClassList and CSS classes. The image is also swapped out (where appropriate) for the correct image with the name of the club revealed, see example below.
+    * Once an answer is selected, the checkAnswer function detects if  the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons change depending on if it is the correct answer or not, using addClassList and CSS classes. The image is also swapped out (where appropriate) for the correct image with the name of the club revealed, see example below.
 
     ![correct badge](readme-images/correct-badge.PNG)
 
     * NB this is not the case with every badge - for example the cyrillic language badges - as revealing the name would not reinforce any new information to the user if they are unable to read the contents.
-    * When calling a new question, the next question function strips the answer buttons of their association with the correct/incorrect CSS classes to reset the answer space to default view.
+    * When calling a new question, the getQuestion function strips the answer buttons of their association with the correct/incorrect CSS classes to reset the answer space to default view.
     * With regards to design, the answer buttons are arranged in a column, in order to keep the game space compact and maximise visual clarity for the player.
     * After an answer input is detected, the answer buttons are then disabled in order to stop any further input from the user - the buttons are then re-enabled every time a new question is called from getQuestion.
     * The game is configured for 10 rounds, after which the game finishes and the score is displayed.
-    * Throughout the game, should the user choosem they can click on the start over button visible to the bottom of the game space to reset all quiz metrics, reshuffle the questions, and begin the quiz again using the resetQuiz function.
+    * Throughout the game, should the user choose, they can click on the start over button visible to the bottom of the game space to reset all quiz metrics, reshuffle the questions, and begin the quiz again using the resetQuiz function.
 
 * __Game Over__
     * Once the game has reached its 10th question, a play again button is made visible through the endGame function, with which the user can use the same resetGame function mentioned earlier to start the game again and attempt to beat their high scores - along with a thank you message.
@@ -74,7 +74,7 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 ## Testing
 
-This project was designed prominantly for mobile screens before using media queries to apply reactivity to the game space. The initial screen during the design phase was the Samsung Galaxy Z Fold 5. Testing was also completed on the following screen sizes;
+This project was designed predominantly for mobile screens before using media queries to apply reactivity to the game space. The initial screen during the design phase was the Samsung Galaxy Z Fold 5. Testing was also completed on the following screen sizes;
 
 * iPhone 12 Pro (390x844)
 * Google Pixel 7, Samsung Galazy S20 Ultra (412x915)
@@ -128,7 +128,7 @@ Lighthouse
 
 ### Development
 
-* When working with as many image elements as this project needed, the first issue encountered during the development cycle was how to initialise them in an accessible way. I initially attempted to declare each image (2 x for every question) as single variables (new Images) and then push all of them to a single image array, from where I could call them whenever.
+* When working with as many image elements as this project needed, the first issue encountered during the development cycle was how to initialise them in an accessible way. I initially attempted to declare each image (2 x for every question) as single variables (new Images) and then push all of them to a single image array, from where I could call them as needed.
 
 For example;
         
@@ -147,7 +147,7 @@ The problem that came up using this method was the code quickly became very unwi
         correctImage: "assets/images/badges/alloa-answer.webp"
     },
 
-* During the creation of the checkAnswer function, the reactivity I was aiming for on user input was to have the boundary surronding the correct answer be added to a specific .correct/.incorrect CSS class as a visual trigger to provide user feedback. Whilst this was simple to initially achieve for the single event target, in order to have the non-targeted button containing the correct answer react provided more of a headache. After a few solutions, I settled on expanding on the 'incorrect anwer' __if else__ block within the checkAnswer function after declaring the answer buttons as seperate variables above the function.
+* During the creation of the checkAnswer function, the reactivity I was aiming for on user input was to have the boundary surrounding the correct answer be added to a specific .correct/.incorrect CSS class as a visual trigger to provide user feedback. Whilst this was simple to initially achieve for the single event target, in order to have the non-targeted button containing the correct answer react provided more of a headache. After a few solutions, I settled on expanding on the 'incorrect anwer' __if/else__ block within the checkAnswer function after declaring the answer buttons as seperate variables above the function.
 
         else {
         if (answer1.innerText === currentQuestion.correctOption) {
