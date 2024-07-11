@@ -248,7 +248,7 @@ sigupButton.addEventListener("click", function (event) {
     if (userName !== "") {
         localStorage.setItem("userName", userName);
         //switch out for something ingame
-        document.getElementById("begin").style.display = "";
+        document.getElementById("begin").style.display = "inline-block";
         document.getElementById("signup").style.display = "none";
     } else {
         alert("Username cannot be empty! Please enter a username.");
@@ -275,8 +275,8 @@ begin.addEventListener("click", function (event) {
     startGame();
 });
 
-let questionNumber = 0; //holds the current question number
-let playerScore = 0; //holds the player score
+let questionNumber = 0; //current question number
+let playerScore = 0; //current player school
 let wrongAttempts = 0; //amount of wrong answers picked by player
 let usedQuestionIds = []; //store used question IDs to avoid repeating same question image
 let currentQuestion;
@@ -294,7 +294,7 @@ function resetQuiz() {
     questionNumber = 0;
     playerScore = 0;
     wrongAttempts = 0;
-    document.getElementById("playAgainBtn").style.display = "none";
+    document.getElementById("play-again-btn").style.display = "none";
     startGame();
 }
 
@@ -328,8 +328,8 @@ function getQuestion() {
         console.log(currentQuestion);
     } else {
         document.getElementById("answer-space").style.display = "none";
-        document.getElementById("playAgainBtn").style.display = "inline";
-        calculateScore();
+        document.getElementById("play-again-btn").style.display = "inline";
+        endGame();
     }
 }
 
@@ -340,10 +340,10 @@ let answer3 = document.getElementById("answer3");
 
 // check answer to current question
 function checkAnswer(event) {
-    console.log(event.target.innerText)
+    console.log(event.target.innerText);
     if (event.target.innerText === currentQuestion.correctOption) {
         console.log("Correct ", currentQuestion.correctOption),
-            event.target.classList.add("correct");
+        event.target.classList.add("correct");
         playerScore++;
         document.getElementById("question-badge").src = currentQuestion.correctImage;
         document.getElementById("player-score").innerHTML = playerScore;
@@ -368,7 +368,7 @@ function checkAnswer(event) {
 }
 
 // calculate final score
-function calculateScore() {
+function endGame() {
     document.getElementById("result-space").style.display = "inline";
     document.getElementById("thanks").innerHTML = "Thank you for playing!";
 }

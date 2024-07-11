@@ -12,14 +12,14 @@ body {
     text-align: center;
     font-size: 1.4rem;
     letter-spacing: 4px;
-    color: white;
+    color: #fff;
 }
     
 #subheader {
     text-align: center;
     font-size: 1rem;
     letter-spacing: 3px;
-    color: white;
+    color: #fff;
 }
 
 #username-display {
@@ -38,8 +38,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 1%;
-    border: 5px solid white;
+    border: 5px solid #fff;
 }
+
+/* signup area for username */
 
 #signup-space {
     font-family: "Graduate", sans-serif;
@@ -59,16 +61,32 @@ body {
 
 #begin {
     font-family: "Graduate", sans-serif;
-    background-color: white;
+    background-color: #fff;
     border: 2px solid #333;
     color: #333;
     text-align: center;
     font-size: 2rem;
     margin-top: 10px;
+    display: none;
+}
+
+/* badge-space heading area */
+
+#badge-space {
+    max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+    display: none;
+}
+    
+#answer-space {
+    display:none;
+    flex-direction: column;
 }
 
 #username-display{
     font-size: 1.2rem;
+    display:none;
 }
 
 h3 {
@@ -76,6 +94,8 @@ h3 {
 }
 
 #answer-input {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -89,10 +109,12 @@ h3 {
     margin-bottom: 5px;
     font-size: 1rem;
 }
-    
+
+/* answer-buttons */
+
 .answer-btn {
     font-family: "Graduate", sans-serif;
-    background-color: white;
+    background-color: #fff;
     border: 5px solid #333;
     color: #333;
     text-align: center;
@@ -100,6 +122,8 @@ h3 {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+/* correct and incorrect classes for answer input */
 
 .correct {
     background-color: rgba(145, 211, 127, 0.66);
@@ -111,10 +135,12 @@ h3 {
     border: 6px solid rgba(255, 0, 0, 1);
 }
 
+/* hidden buttons for reset state and next question */
+
 #next {
     font-family: "Graduate", sans-serif;
     background-color: #ebe410;
-    border: 2px solid white;
+    border: 2px solid #fff;
     color: #333;
     text-align: center;
     font-size: 1rem;
@@ -124,7 +150,7 @@ h3 {
 #reset {
     font-family: "Graduate", sans-serif;
     background-color: #04AA6D;
-    border: 2px solid white;
+    border: 2px solid #fff;
     color: #333;
     text-align: center;
     font-size: 1rem;
@@ -135,21 +161,24 @@ h3 {
 .break {
     padding: 20px;
 }
-    
+
+/* progress bar */
+
 .progress {
     background-color: #04AA6D;
     padding: 2px;
 }
 
-#playAgainBtn {
+#play-again-btn {
     font-family: "Graduate", sans-serif;
     background-color: #04AA6D;
-    border: 2px solid white;
+    border: 2px solid #fff;
     color: #333;
     text-align: center;
     font-size: 1rem;
     margin-top: 10px;
     margin-bottom: 20px;
+    display: none;
 }
     
 #badge-space {
@@ -163,16 +192,26 @@ h3 {
     display:none;
     flex-direction: column;
 }
-    
+
+/* general style for input elements */
+
 input {
     font-family: "Graduate", sans-serif;
-    background-color: white;
+    background-color: #fff;
     border: 2px solid #04AA6D;
     color: #333;
     text-align: center;
     font-size: 1rem;
     margin-top: 10px;
 }
+
+/* results & thanks message */
+
+#result-space {
+    display: none;
+}
+
+/* 404 styles */
 
 #not-found-div {
     position: absolute;
@@ -184,14 +223,14 @@ input {
     text-align: center;
     font-size: 1.8rem;
     letter-spacing: 4px;
-    color: white;
+    color: #fff;
 }
 
 #not-found-subheader {
     text-align: center;
     font-size: 1.4rem;
     letter-spacing: 3px;
-    color: white;
+    color: #fff;
 }
     
 /* media queries for general responsivity */
@@ -222,9 +261,6 @@ input {
     }
 
     #answer-input {
-        float: right;
-        display: flex;
-        flex-direction: column;
         padding-left: 50px;
         padding-right: 50px;
     }

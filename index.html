@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="The good, the bad and the ugly. Javascript quiz game matching football club badges to names">
+        content="The good, the badge and the ugly. Javascript quiz game matching football club badges to names">
     <meta name="keywords" content="football badges, quiz, football">
 
     <!-- font awesome and google fonts -->
@@ -45,14 +45,14 @@
                 <!-- run start game script on begin input eventlistener -->
                 <br class="break">
                 <label for="begin"></label>
-                <input type="submit" id="begin" style="display: none;" value="Begin!">
+                <input type="submit" id="begin" value="Begin!">
             </div>
 
             <br class="break">
 
             <!-- display stored username above gamespace -->
             <div>
-                <h2 id="username-display" style="display: none;">Player</h2>
+                <h2 id="username-display">Player</h2>
             </div>
 
             <br>
@@ -69,7 +69,7 @@
                 <h3> Question : <span id="question-number">1</span> / 10</h3>
                 <!-- Progress bar 1/5 -->
                 <progress class="progress" max="100" value="10"></progress>
-                <button id="playAgainBtn" onclick="resetQuiz()" style="display:none">Play Again!</button>
+                <button id="play-again-btn" onclick="resetQuiz()">Play Again!</button>
             </div>
 
             <br>
@@ -90,7 +90,7 @@
                 <button id="reset" onclick="resetQuiz()">Start Over</button>
             </div>
             <!-- message for end of quiz -->
-            <div id="result-space" style="display:none;">
+            <div id="result-space">
                 <h2 id="thanks">Thank you for playing!</h2>
                 <br>
             </div>
