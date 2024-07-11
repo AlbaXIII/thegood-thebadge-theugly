@@ -143,9 +143,10 @@ The problem that came up using this method was the code quickly became very unwi
   
 ### Unfixed Bugs
 
-## Deployment
+* No known bugs on date of submission. 
+* Occasional permissions error with favicon manifest shown in console, however it does not affect the loading of the icon or the user experience.
 
-* No known bugs on date of submission.
+## Deployment
 
 ### Github Pages
 

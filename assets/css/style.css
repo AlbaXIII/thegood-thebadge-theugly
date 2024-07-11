@@ -220,7 +220,7 @@ input {
     top: 50%;
 }
 
-#not-found-div > a {
+#not-found-div a {
     text-decoration: none;
 }
 
