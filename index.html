@@ -66,9 +66,9 @@
                 <h3>Score : <span id="player-score">0</span> / 10</h3>
                 <h3>Wrong : <span id="wrong-attempts">0</span></h3>
                 <h3> Question : <span id="question-number">1</span> / 10</h3>
-                <!-- Progress bar 1/5 -->
+                <!-- Progress bar 1/10 -->
                 <progress class="progress" max="100" value="10"></progress>
-                <button id="play-again-btn" onclick="resetQuiz()">Play Again!</button>
+                <button aria-label="restart" id="play-again-btn" onclick="resetQuiz()">Play Again!</button>
             </div>
 
             <br>
@@ -77,16 +77,19 @@
             <div id="answer-space">
                 <!-- answer options values 1 to 3 -->
                 <div id="answer-input">
-                    <button id="answer1" class="answer-btn" onclick="checkAnswer(event)">answer1</button>
-                    <button id="answer2" class="answer-btn" onclick="checkAnswer(event)">answer2</button>
-                    <button id="answer3" class="answer-btn" onclick="checkAnswer(event)">answer3</button>
+                    <button aria-label="answer1" id="answer1" class="answer-btn"
+                        onclick="checkAnswer(event)">answer1</button>
+                    <button aria-label="answer2" id="answer2" class="answer-btn"
+                        onclick="checkAnswer(event)">answer2</button>
+                    <button aria-label="answer3" id="answer3" class="answer-btn"
+                        onclick="checkAnswer(event)">answer3</button>
                 </div>
                 <!-- next question button -->
                 <div class="next-button-container">
-                    <button id="next" onclick="getQuestion()">Next Question</button>
+                    <button aria-label="next" id="next" onclick="getQuestion()">Next Question</button>
                 </div>
                 <!-- reset button to break game early or reset -->
-                <button id="reset" onclick="resetQuiz()">Start Over</button>
+                <button aria-label="reset" id="reset" onclick="resetQuiz()">Start Over</button>
             </div>
             <!-- message for end of quiz -->
             <div id="result-space">
