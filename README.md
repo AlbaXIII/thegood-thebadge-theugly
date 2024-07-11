@@ -2,9 +2,9 @@
 
 The Good, the Badge and the Ugly is an interactive image quiz based on some of the more outlandish football club badges, implemented through HTML, CSS and JavaScript.
 
-Whilst thinking about a project idea to submit for Assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football. This sparked an idea - and I decided to try and create a quiz based around the idea that some of the designs are so bizarre that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledeable sport lovers.
+Whilst thinking about a project idea to submit for assignment 2, I stumbled upon an article from FourFourTwo magazine that listed the 17 weirdest badges in world football. This sparked an idea - and I decided to try and create a quiz based around the idea that some of the designs are so bizarre that it could be a fun challenge for the user to try and discern the name based on 3 multiple choice options, a format I enjoy from TV shows such as The Chase. In keeping with that intended structure, it was decided that the potential answers would have an (attempted) humourous edge to them, as the combination of unusual badge and comical potential answer would make for a memorable way to spend a couple of minutes for both casual and knowledeable football lovers.
 
-With that in mind, the design philosophy would be to create a intiutive, clean and most of all enjoyable quiz with an clear scoring system and an ability to choose a username and record a high score.
+With that in mind, the design philosophy would be to create a intiutive, clean and most of all enjoyable quiz with an clear scoring system and an ability to choose a username and record scores.
 
 ![series of responsive screenshots](readme-images/responsive-screenshot.png)
 
@@ -12,11 +12,11 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
 
 * __Background__
     * The intial design philosophy of the quiz was to use a single large background that immediately communicates visually to the user the theme of the site, and for this reason the background is a warm-contrasted image of a football pitch from above. 
-    * Whilst this was an obvious choice, the top-down angle gives an isometric feel to the website remeniscent of a tactical screen in order to give a crisp look to the playing area and get the user into the mindset of the 'player'.
+    * Whilst this was an obvious choice, the top-down angle gives an isometric feel to the website reminiscent of a tactical screen in order to give a crisp look to the playing area and get the user into the mindset of the 'player'.
 
 * __Header__
-    * At the head of the site above the game space are two headers, displaying the name of the site as well as the rules of the game. The font used is __"Graduate"__, a font chosen for it's resemblance to retro football kit numbers to give the page an 'sporty' aesthetic, with solid white coloring to ehance this look.
-    * Furthermore the lack of an overabundance of text allows the user to quickly comprehend the rules of the game and then being able to jump straight into playing.
+    * Above the game space are two headers, displaying the name of the site as well as the rules of the game. The font used is __"Graduate"__, chosen for its resemblance to retro football kit numbers to give the page a 'sporty' aesthetic, with solid white coloring to ehance this look.
+    * Furthermore the lack of an overabundance of text allows the user to quickly comprehend the rules of the game and be able to jump straight into playing.
     * The font sizes used are calculated in rem to ensure reactivity to all screen sizes.
 
     ![username space](readme-images/username-space.png)
@@ -28,48 +28,49 @@ With that in mind, the design philosophy would be to create a intiutive, clean a
     ![username filled](readme-images/username-fill.png)
 
 * __Username__
-    * When intially navigating to the site, there is a username input box presented as validation for the user to begin playing. Through use of Javascript and local storage, the game will not begin until the username is defined by the user, wherein the chosen username is displayed above the game space during play.
+    * When intially navigating to the site, there is a username input box presented as validation for the user to begin playing. Through use of Javascript and local storage, the game will not begin until the username is defined by the user, wherein the chosen username is displayed above the game space during play to personalise the experience.
 
     ![username validation](readme-images/username-validation.png)
 
-    * After filling in their username, the username signup area is hidden immediately after completion of the name submission in order to maintain the consistent flow of information to the game space, and the begin game button comes into view, styled with large lettering to show a clear call to action.
-    * The signup function has a validation if validator built in to stop users from starting the game without inputting any text, which triggers an alert.
+    * The signup function has an if/else block built in to stop users from starting the game without inputting any text, which triggers an alert.
+    * After submission of the username to local storage, the begin button is called into display. The begin button is styled larger than the others, to provide the user with a clear call to action.
 
     ![game space](readme-images/game-space.png)
 
 * __Game Space__
-    * Once the user has defined their username, the quiz can begin on and eventlistener paired to the begin button.
-    * The signup space division and begin button are then hidden by the startQuiz function and the main game space is brought into view as part of the same function.
-    * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game is begun, the next question function picks out a question at random and targets the relevant images in the DOM with their specific strings.
+    * The signup space division and begin button are then hidden by the startQuiz function paired to the begin button, and the main game space is brought into view as part of the same function.
+    * The questions have been organised as an array of objects, storing strings referring to the question image source, correct and incorrect options, and the correct answer image source. When the game begins, the next question function picks out a question at random and targets the relevant elements in the DOM with their specific strings.
 
     ![badge space](readme-images/badge-space.png)
 
-    * On the top of the screen (left hand side on tablet screens and larger), the question badge is displayed - this is the clue for the user to guess from. I attempted to find the most unusual badges for the quiz to provide the greatest challenge to the user. 
+    * On the top of the screen, the question badge is displayed - this is the clue for the user to guess from. I attempted to find the most unusual badges to provide the greatest challenge to the user. 
     * Beneath the badge are the quiz metrics - the current question number, current score and wrong answer count. These react to the quiz questions called and will reset to zero upon input of the start over button. Also present is a progress bar, which also reacts to the question number and fills up as the quiz goes on, bringing some extra user feedback to the space and create a more dynamic feel to the process.
 
 * __Answer Space__
-    * The answer space consists of the three mutliple choice buttons, all calling the check answer function as an event listener to each of the answer buttons. The buttons themselves are styled with a clean bold border to draw the users eye and interact with the checkAnswer function so when they do change colour when the answer is checked, it has a very understandable effect for the user.
+    * The answer space consists of the three mutliple choice buttons, all calling the check answer function as an event listener. The buttons themselves are styled with a clean bold border to draw the users eye and interact with the checkAnswer function so when they do change colour when the answer is checked, it has a very demonstrative effect for the user.
 
     ![game validation](readme-images/game-validation.png)
 
-    * Once an answer is selected, the check answer function is called and function detects is the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not.
+    * Once an answer is selected, the check answer function detects if  the inner HTML of the button called by the question matches the correct answer from the question object. The user can see the result in-game as the border and color of the answer buttons is changed depending on correct answer or not using addClassList and CSS classes.
     * When calling a new question, the next question function strips the answer buttons of their association with the correct/incorrect CSS classes to reset the answer space to default view.
     * With regards to design, the answer buttons are arranged in a column, in order to keep the game space compact and maximise visual clarity for the player.
     * After an answer input is detected, the answer buttons are then disabled in order to stop any further input from the user - the buttons are then re-enabled every time a new question is called from getQuestion.
     * The game is configured for 10 rounds, after which the game finishes and the score is displayed.
+    * Throughout the game, should the user choosem they can click on the start over button visible to the bottom of the game space to reset all quiz metrics, reshuffle the questions, and begin the quiz again using the resetQuiz function.
 
 * __Game Over__
-    * Once the game has reached its 10th question, a play again button is made visible, with which the user can use the same reset game function mentioned earlier to start the game again and attempt to beat their high scores.
+    * Once the game has reached its 10th question, a play again button is made visible through the endGame function, with which the user can use the same resetGame function mentioned earlier to start the game again and attempt to beat their high scores - along with a thank you message.
 
     ![game over](readme-images/game-over.png)
 
 * __404 Page__
     * Lastly, a custom 404 page has been prepared in the unlikely event the user cannot reach the correct page of the website. The page follows the same design philosophy of the index page, with a short message informing the viewer of the problem at hand and a hyperlink back to the homepage.
 
+    ![page not found](readme-images/page-not-found.PNG)
 
 ## Testing
 
-This project was designed prominantly for mobile screens before using media queries to apply reactivity to the game space. The initial screen during the design phase was the Saamsung Galaxy Z Fold 5. Testing was also completed on the following screen sizes;
+This project was designed prominantly for mobile screens before using media queries to apply reactivity to the game space. The initial screen during the design phase was the Samsung Galaxy Z Fold 5. Testing was also completed on the following screen sizes;
 
 * iPhone 12 Pro (390x844)
 * Google Pixel 7, Samsung Galazy S20 Ultra (412x915)
@@ -104,6 +105,16 @@ CSS
 
 JavaScript
 * NO major errors flagged in [JShint](https://jshint.com/).
+
+Lighthouse 
+
+* Mobile
+
+![lighthouse mobile](readme-images/lighthouse-mobile.PNG)
+
+* Desktop 
+
+![lighthouse desktop](readme-images/lighthouse-desktop.PNG)
 
 ## Functional Testing
 
