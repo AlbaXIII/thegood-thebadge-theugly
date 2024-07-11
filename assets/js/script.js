@@ -341,6 +341,7 @@ let answer3 = document.getElementById("answer3");
 // check answer to current question
 function checkAnswer(event) {
     console.log(event.target.innerText);
+    // add correct answers to correct css class
     if (event.target.innerText === currentQuestion.correctOption) {
         console.log("Correct ", currentQuestion.correctOption),
         event.target.classList.add("correct");
@@ -348,6 +349,7 @@ function checkAnswer(event) {
         document.getElementById("question-badge").src = currentQuestion.correctImage;
         document.getElementById("player-score").innerHTML = playerScore;
     } else {
+        // add incorrect answers to incorrect css class
         if (answer1.innerText === currentQuestion.correctOption) {
             answer1.classList.add("correct");
         } else if (answer2.innerText === currentQuestion.correctOption) {
@@ -367,7 +369,7 @@ function checkAnswer(event) {
     answer3.disabled = true;
 }
 
-// calculate final score
+// show final score and thank you message
 function endGame() {
     document.getElementById("result-space").style.display = "inline";
     document.getElementById("thanks").innerHTML = "Thank you for playing!";
