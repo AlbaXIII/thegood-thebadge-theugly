@@ -214,13 +214,13 @@ input {
 /* 404 styles */
 
 #not-found-div {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
     left: 50%;
     top: 50%;
 }
 
 #not-found-header {
-    display: flex;
     align-items: center;
     text-align: center;
     font-size: 1.8rem;
@@ -229,7 +229,6 @@ input {
 }
 
 #not-found-subheader {
-    display: flex;
     align-items: center;
     text-align: center;
     font-size: 1.4rem;
